@@ -9,21 +9,10 @@ fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=bf08c0c07642287cb
     response.json()).then(data =>(data.results) )
     .then(movies => 
     {
-         let newMovieList = [];
-        if (document.documentElement.clientWidth < 768) {
-            newMovieList = movies.slice(0, 4)
-            // return  newMovieList
-        }
-        if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1024) {
-            newMovieList = movies.slice(0, 8)
-        }
-        if (document.documentElement.clientWidth >= 1024) {
-            newMovieList = movies.slice(0, 9)
-        }
-        console.log(newMovieList);
-      
+        const render = renderCountElement(movies);
+
         // делаем разметку (вставляем шаблон)
-        const markup = film(newMovieList)
+        const markup = film(render);
         movieRef.insertAdjacentHTML("beforeend", markup);
        
         let filmItemRef = document.querySelectorAll(".trend-film-item")
@@ -65,3 +54,27 @@ fetch("https://api.themoviedb.org/3/trending/movie/day?api_key=bf08c0c07642287cb
 })
 
 
+
+// Рендерит опредленнaddое количество элементов на странице в зависимости от ее ширины (для мобилки, таблетки, десктопа)
+function renderCountElement(movies) {
+      let newMovieList = [];
+        if (document.documentElement.clientWidth < 768) {
+            newMovieList = movies.slice(0, 4)
+            // return  newMovieList
+        }
+        if (document.documentElement.clientWidth >= 768 && document.documentElement.clientWidth < 1024) {
+            newMovieList = movies.slice(0, 8)
+        }
+        if (document.documentElement.clientWidth >= 1024) {
+            newMovieList = movies.slice(0, 9)
+    }
+    
+    return newMovieList;
+}
+
+// Преобразовывает числа в текстовое значение жанра фильма
+
+function renderGenre(genreNumber) {
+
+    
+}
