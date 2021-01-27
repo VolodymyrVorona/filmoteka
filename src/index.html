@@ -11,29 +11,6 @@
     />
   </head>
   <body>
-    <header class="header" id="header">
-      <div class="container">
-        <div class="menu__wrapper">
-          <a href="#" class="logo link"
-            ><span class="logo__text">Filmoteka</span></a
-          >
-          <nav>
-            <a class="page__link active link home" href="#">Home</a>
-            <a class="page__link link library" href="#">my library</a>
-          </nav>
-        </div>
-        <div class="input__wrapper">
-          <input
-            class="search__input"
-            type="text"
-            name="search-input"
-            id="search-input"
-            placeholder="Поиск фильмов"
-            autocomplete="false"
-          />
-        </div>
-      </div>
-    </header>
     <main>
       <div class="container">
         <!-- разметка для фильмов которые в тренде для главной страницы -->
@@ -50,5 +27,11 @@
         </p>
       </div>
     </footer>
+
+    <!-- для модалки ( здесь вставляется шаблон) -->
+    <div class="container">
+      <div class="movie-modal"></div>
+    </div>
+
   </body>
 </html>
