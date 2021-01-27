@@ -1,0 +1,33 @@
+<img class="movie-modal-image" src=https://image.tmdb.org/t/p/w500{{poster_path}} alt="{{original_title}}" width="426px"
+    height="514px">
+<div>
+    <h2 class="movie-modal-title"> {{original_title}}</h2>
+    <div class="movie-modal-properties-values">
+        <ul class="movie-modal-properties list">
+            <li>Vote / Votes</li>
+            <li>Popularity</li>
+            <li> Original Title</li>
+            <li>Genre</li>
+        </ul>
+        <ul class="movie-modal-values list">
+            <li class="modal-vote-count">
+                <span class="modal-vote">{{vote_average}}</span>
+                <span class="modal-line"> /</span>
+                <span class="modal-count">{{vote_count}}</span>
+            </li>
+            <li>{{popularity}}</li>
+            <li class="modal-original-title">{{original_title}}</li>
+            <li class="modal-genre">
+                {{#each genres}}
+                <span class="modal-genre-item">{{this.name}}</span>
+                {{/each}}
+            </li>
+        </ul>
+    </div>
+    <h3 class="about-modal">About</h3>
+    <p class="about-modal-description">{{overview}}</p>
+    <div>
+        <button>add to Watched</button>
+        <button>add to queue</button>
+    </div>
+</div>
