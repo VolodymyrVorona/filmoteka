@@ -1,0 +1,32 @@
+.buttons-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.button {
+  border: transparent;
+  border-radius: 5px;
+  width: 136px;
+  height: 44px;
+
+  font-weight: 500;
+  line-height: 1.33;
+  text-transform: uppercase;
+  color: $text-dark-theme-color;
+  background-color: $button-main-background-color;
+}
+
+.button:not(:last-child) {
+  margin-right: 15px;
+}
+
+.header-light-btn {
+  border: 1px solid #ffffff;
+  background-color: transparent;
+}
+
+.modal-light-btn {
+  border: 1px solid #000000;
+  color: $text-light-theme-color;
+  background-color: transparent;
+}
