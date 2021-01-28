@@ -1,0 +1,22 @@
+footer {
+  background-color: #f7f7f7;
+}
+
+footer > div {
+  color: $text-footer-color;
+  padding-top: 30px;
+  padding-bottom: 28px;
+  font-size: 16px;
+}
+
+.copyright {
+  display: flex;
+  justify-content: center;
+  > a {
+    margin-left: 10px;
+    color: $text-footer-color;
+  }
+  > img {
+    margin: 0 10px;
+  }
+}
