@@ -61,6 +61,7 @@ fetch(
 
                 movieModalRef.classList.add('is-hidden');
                 console.log("closed!");
+                filmCardRef.innerHTML='';
                 
             }
             
