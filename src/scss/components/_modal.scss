@@ -42,13 +42,13 @@
     border-radius: 4px;
     background-color: #fff;
 
+    // need to put width for diferent breaking points
     width: 900px;
 }
 
 .film-card {
     display: flex;
     flex-direction: row;
-    align-items: center;
 }
 
 .close-button {
