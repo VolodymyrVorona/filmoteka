@@ -1,9 +1,11 @@
 import film from '../templates/trendMovieTemplate.hbs';
+import headerMarkup from '../templates/homeHeader.hbs';
 import refs from './refs';
 
 // --------выводим результат поиска  по ключевым словам------
 const searchResultsMarkup = results => {
   let newMovieList = [];
+
   if (document.documentElement.clientWidth < 768) {
     newMovieList = results.slice(0, 4);
     // return  newMovieList
@@ -23,9 +25,17 @@ const searchResultsMarkup = results => {
   const markup = film(newMovieList);
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
 
-  let genreRef = document.querySelectorAll('.trend-film-genre');
+  // ------------условие для вывода предупреждения---------------
+  if (results === []) {
+    refs.warningString.classList.remove('is-hidden');
+  }
+  if (results !== []) {
+    refs.warningString.classList.add('is-hidden');
+  }
 
   // еще не решена проблема с id жанрами , пока будет так:
+  let genreRef = document.querySelectorAll('.trend-film-genre');
+
   genreRef.forEach(genre => {
     if (genre.textContent.includes(18)) {
       genre.textContent = 'Drama';

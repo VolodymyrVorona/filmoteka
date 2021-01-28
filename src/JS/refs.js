@@ -1,4 +1,4 @@
-import homeHeaderTmpl from '../templates/homeHeader.hbs';
+import headerMarkup from '../templates/homeHeader.hbs';
 
 const refs = {
   movieRef: document.querySelector('.trend-movie'),
