@@ -52,7 +52,6 @@ fetch(
               const markup2 = modalMovieTemplate(movie);
               filmCardRef.insertAdjacentHTML('beforeend', markup2);
             });
-  
             
             movieModalRef.classList.remove("is-hidden");
             console.log("opening!");
@@ -61,6 +60,7 @@ fetch(
 
                 movieModalRef.classList.add('is-hidden');
                 console.log("closed!");
+                filmCardRef.innerHTML = '';
                 
             }
             
@@ -75,6 +75,7 @@ fetch(
                 }
             }            
             window.addEventListener('keydown', pressEscape);
+
         }
 
       });
