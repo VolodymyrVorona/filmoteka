@@ -3,7 +3,24 @@ import refs from './refs';
 
 // --------выводим результат поиска  по ключевым словам------
 const searchResultsMarkup = results => {
-  const markup = film(results);
+  let newMovieList = [];
+  if (document.documentElement.clientWidth < 768) {
+    newMovieList = results.slice(0, 4);
+    // return  newMovieList
+  }
+  if (
+    document.documentElement.clientWidth >= 768 &&
+    document.documentElement.clientWidth < 1024
+  ) {
+    newMovieList = results.slice(0, 8);
+  }
+  if (document.documentElement.clientWidth >= 1024) {
+    newMovieList = results.slice(0, 9);
+  }
+
+  console.log(newMovieList);
+
+  const markup = film(newMovieList);
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
 
   let genreRef = document.querySelectorAll('.trend-film-genre');

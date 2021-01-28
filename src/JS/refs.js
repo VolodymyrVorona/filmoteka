@@ -6,6 +6,7 @@ const refs = {
   searchForm: document.querySelector('.js-search-form'),
   inputField: document.querySelector('.js-input'),
   searchBtn: document.querySelector('.js-search-btn'),
+  warningString: document.querySelector('.js-warning'),
 };
 
 export default refs;
