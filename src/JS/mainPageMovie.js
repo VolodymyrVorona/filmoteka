@@ -32,23 +32,54 @@ fetch(
     movieRef.insertAdjacentHTML('beforeend', markup);
 
     let filmItemRef = document.querySelectorAll('.trend-film-item');
+    const filmCardRef = document.querySelector('.film-card');
     let genreRef = document.querySelectorAll('.trend-film-genre');
 
     filmItemRef.forEach(data => {
       let filmID = data.dataset.film;
       // Вешаем на картинку слушателя (должна открываться потом модалка, пока что рендерится разметка модалки внизу)
-      data.addEventListener('click', event => {
-        fetch(
-          `https://api.themoviedb.org/3/movie/${filmID}?api_key=bf08c0c07642287cbabe383c02818eb3`,
-        )
-          .then(response => response.json())
-          .then(movie => {
-            console.log(movie);
-            const markup2 = modalMovieTemplate(movie);
-            movieModalRef.insertAdjacentHTML('beforeend', markup2);
-          });
+      data.addEventListener('click', modalHandler);
+
+      function modalHandler(event) {
+            event.preventDefault;
+  
+          fetch(
+            `https://api.themoviedb.org/3/movie/${filmID}?api_key=bf08c0c07642287cbabe383c02818eb3`,
+          )
+            .then(response => response.json())
+            .then(movie => {
+              console.log(movie);
+              const markup2 = modalMovieTemplate(movie);
+              filmCardRef.insertAdjacentHTML('beforeend', markup2);
+            });
+            
+            movieModalRef.classList.remove("is-hidden");
+            console.log("opening!");
+
+            function closeModal() {
+
+                movieModalRef.classList.add('is-hidden');
+                console.log("closed!");
+                filmCardRef.innerHTML='';
+
+                
+            }
+            
+            const closeBtnRef = document.querySelector('.close-button');
+            closeBtnRef.addEventListener('click', closeModal);
+            const backdropRef = document.querySelector('.backdrop');
+            backdropRef.addEventListener('click', closeModal);
+           
+            const pressEscape = event => {
+                if (event.code === 'Escape') {
+                closeModal();
+                }
+            }            
+            window.addEventListener('keydown', pressEscape);
+
+        }
+
       });
-    });
     // еще не решена проблема с id жанрами , пока будет так:
     genreRef.forEach(genre => {
       if (genre.textContent.includes(18)) {

@@ -13,7 +13,7 @@
   <body>
     <main>
       <div class="container">
-        <!-- разметка для фильмов которые в тренде для главной страницы -->
+        <!-- разметка для фильмов которые в тренде для главной страницы и для результатов поиска по ключевому слову-->
         <ul class="trend-movie"></ul>
       </div>
     </main>
@@ -29,8 +29,15 @@
     </footer>
 
     <!-- для модалки ( здесь вставляется шаблон) -->
-    <div class="container">
-      <div class="movie-modal"></div>
+    <div class="movie-modal is-hidden">
+      <div class="backdrop"></div>
+      <div class="modal-content">
+        <div class="film-card">
+          <button class="close-button" type="button" data-modal-close><img class="svg-close" src="./images/close-button.svg"
+              alt="Закрыть" /></button>
+        </div>
+      </div>
+     
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -56,5 +63,6 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
+
   </body>
 </html>
