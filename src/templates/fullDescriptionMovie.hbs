@@ -1,5 +1,5 @@
 <img class="movie-modal-image" src=https://image.tmdb.org/t/p/w500{{poster_path}} alt="{{original_title}}" width="426px"
-    height="514px">
+    height="514px" loading="lazy">
 <div class="movie-modal-full-description">
     <h2 class="movie-modal-title"> {{original_title}}</h2>
     <div class="movie-modal-properties-values">
@@ -32,7 +32,7 @@
         <button class="button modal-light-btn js-add-to-queue" disabled>add to queue</button>
     </div>
 </div>
-<button type="button" class="close-button"> <div class="close"></div>
 
-        {{!-- <img class="svg-close" src="../images/close-button.svg" alt="Закрыть"> --}}
-    </button>
+<button type="button" class="close-button">
+    <img class="svg-close" src="../images/close-button.svg" alt="Закрыть">
+</button>
