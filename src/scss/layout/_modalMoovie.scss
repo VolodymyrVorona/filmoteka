@@ -1,18 +1,31 @@
 // Модалка
-.movie-modal{
-  display: flex;
-  padding: 20px;
-}
+
 .movie-modal-image{
-  margin-right: 30px;
- 
+  margin-bottom: 30px;
+  width: auto;
+  height: 416px;
+   @media screen and (min-width: 768px) {
+   margin-right: 30px;
+    margin-bottom: 0px;
+    width: auto;
+  height: 416px;
+  }
+  @media screen and (min-width: 1024px) {
+   width: auto;
+  height: 514px;
+  }
 }
 .movie-modal-title{
  margin-top: 0px;
- margin-bottom: 20px;
- font-size: 30px;
- line-height: 1.16;
+ margin-bottom: 25px;
+ font-size: 20px;
+ line-height: 1.15;
 text-transform:uppercase;
+  @media screen and (min-width: 768px) {
+   margin-bottom: 20px;
+ font-size: 30px;
+ line-height: 1.17;
+  }
 
 }
 .movie-modal-properties-values{
@@ -28,7 +41,7 @@ text-transform:uppercase;
  padding-left:0px;
 
  font-size: 12px;
- color:$text-modal-window-color;
+ color: $text-modal-window-color;
 }
 .movie-modal-properties li:not(:last-child){
   margin-bottom: 10px;
@@ -36,8 +49,11 @@ text-transform:uppercase;
 .movie-modal-values{
  list-style: none;
  padding-left:0px;
- margin-left: 83px;
+ margin-left: 39px;
  line-height: 1.16; 
+ @media screen and (min-width: 1024px) {
+margin-left: 83px;
+  }
 }
 .modal-original-title{
   text-transform:uppercase;
@@ -100,4 +116,14 @@ line-height: 1.66;
 }
 .buttons-wrapper{
   justify-content: left;
+}
+.movie-modal-full-description{
+  width: 279px;
+    @media screen and (min-width: 768px) {
+   width: 294px;
+  }
+
+  @media screen and (min-width: 1024px) {
+   width: 426px;
+  }
 }

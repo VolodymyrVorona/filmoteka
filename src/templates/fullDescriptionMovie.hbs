@@ -1,10 +1,10 @@
 <img class="movie-modal-image" src=https://image.tmdb.org/t/p/w500{{poster_path}} alt="{{original_title}}" width="426px"
-    height="514px">
-<div>
+    height="514px" loading="lazy">
+<div class="movie-modal-full-description">
     <h2 class="movie-modal-title"> {{original_title}}</h2>
     <div class="movie-modal-properties-values">
         <ul class="movie-modal-properties list">
-            <li>Vote / Votes</li>
+            <li>Rating / Votes</li>
             <li>Popularity</li>
             <li> Original Title</li>
             <li>Genre</li>
@@ -28,7 +28,9 @@
     <p class="about-modal-description">{{overview}}</p>
 
     <div class="buttons-wrapper">
-        <button class="button">add to Watched</button>
-        <button class="button  modal-light-btn">add to queue</button>
+        <button class="button js-add-to-watched" disabled>add to Watched</button>
+        <button class="button modal-light-btn js-add-to-queue" disabled>add to queue</button>
     </div>
 </div>
+
+<button type="button" class="close-button"> <div class="close"></div></button>

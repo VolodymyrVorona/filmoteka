@@ -1,6 +1,8 @@
 import film from '../templates/trendMovieTemplate.hbs';
 import modalMovieTemplate from '../templates/fullDescriptionMovie.hbs';
 
+import genreID from '../JS/genreID'
+
 const movieModalRef = document.querySelector('.movie-modal');
 const movieRef = document.querySelector('.trend-movie');
 
@@ -11,6 +13,26 @@ fetch(
   .then(response => response.json())
   .then(data => data.results)
   .then(movies => {
+
+// изменяет  жанр  и дату 
+        movies.map((item) => {
+            let newGenre = [];
+            item.genre_ids.map((id) => {
+                const found = genreID.find((item) => item.id === id);
+                newGenre.push(found.name);
+            })
+          item.release_date=item.release_date.slice(0, 4)
+                if (newGenre.length >= 4) {
+      const manyGenres = newGenre.slice(0, 3);
+      item.genre_ids = manyGenres.join(', ')
+                }
+                else {
+      item.genre_ids = newGenre.join(', ');
+    }
+    return item;
+        })
+
+
     let newMovieList = [];
     if (document.documentElement.clientWidth < 768) {
       newMovieList = movies.slice(0, 4);
@@ -23,9 +45,9 @@ fetch(
       newMovieList = movies.slice(0, 8);
     }
     if (document.documentElement.clientWidth >= 1024) {
-      newMovieList = movies.slice(0, 9);
+      newMovieList = movies.slice(0,9);
     }
-    console.log(newMovieList);
+    
 
     // делаем разметку (вставляем шаблон)
     const markup = film(newMovieList);
@@ -33,7 +55,7 @@ fetch(
 
     let filmItemRef = document.querySelectorAll('.trend-film-item');
     const filmCardRef = document.querySelector('.film-card');
-    let genreRef = document.querySelectorAll('.trend-film-genre');
+    // let genreRef = document.querySelectorAll('.trend-film-genre');
 
     filmItemRef.forEach(data => {
       let filmID = data.dataset.film;
@@ -48,19 +70,21 @@ fetch(
           )
             .then(response => response.json())
             .then(movie => {
-              console.log(movie);
+
+              
               const markup2 = modalMovieTemplate(movie);
               filmCardRef.insertAdjacentHTML('beforeend', markup2);
-            });
-  
-            
-            movieModalRef.classList.remove("is-hidden");
-            console.log("opening!");
+
+              movieModalRef.classList.remove("is-hidden");
+            // console.log("opening!");
 
             function closeModal() {
 
                 movieModalRef.classList.add('is-hidden');
-                console.log("closed!");
+                window.removeEventListener('keydown', pressEscape)
+                // console.log("closed!");
+                filmCardRef.innerHTML='';
+
                 
             }
             
@@ -75,25 +99,11 @@ fetch(
                 }
             }            
             window.addEventListener('keydown', pressEscape);
+
+            });
+            
+            
         }
 
       });
-    // еще не решена проблема с id жанрами , пока будет так:
-    genreRef.forEach(genre => {
-      if (genre.textContent.includes(18)) {
-        genre.textContent = 'Drama';
-      }
-      if (genre.textContent.includes(28)) {
-        genre.textContent = 'Action';
-      }
-      if (genre.textContent.includes(10752)) {
-        genre.textContent = 'War';
-      }
-    });
-    // Обрезаем лишнее в дате, оставлем только год
-    let dataRef = document.querySelectorAll('.trend-film-data');
-    dataRef.forEach(data => {
-      let newData = data.textContent.slice(0, 5);
-      data.textContent = newData;
-    });
   });
