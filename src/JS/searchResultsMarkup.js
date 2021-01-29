@@ -25,11 +25,11 @@ const searchResultsMarkup = results => {
   const markup = film(newMovieList);
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
 
-  // ------------условие для вывода предупреждения---------------
-  if (results === []) {
+  // ------------показывает  предупреждение при вводе рандомного набора символов---------------
+  if (results.length === 0) {
     refs.warningString.classList.remove('is-hidden');
   }
-  if (results !== []) {
+  if (results.length > 0) {
     refs.warningString.classList.add('is-hidden');
   }
 
