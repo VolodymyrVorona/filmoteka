@@ -1,7 +1,6 @@
 import film from '../templates/trendMovieTemplate.hbs';
 import modalMovieTemplate from '../templates/fullDescriptionMovie.hbs';
 import refs from '../JS/refs';
-import closeModal from './modal'
 
 
 // Запрос на тренды
