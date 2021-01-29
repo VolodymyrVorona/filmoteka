@@ -1,6 +1,9 @@
-.buttons-wrapper {
+div.buttons-wrapper {
   display: flex;
   justify-content: center;
+  &.is-hidden {
+    display: none;
+  }
 }
 
 .button {
