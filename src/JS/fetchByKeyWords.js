@@ -8,7 +8,9 @@ const fetchMovies = searchQuery => {
   return fetch(url)
     .then(res => res.json())
     .then(({ results }) => results)
-    .catch(error => console.log(error));
+    .catch(error => {
+      refs.warningString.classList.remove('is-hidden');
+    });
 };
 
 export default fetchMovies;
