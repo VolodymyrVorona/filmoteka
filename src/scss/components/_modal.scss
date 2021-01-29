@@ -32,7 +32,7 @@
     background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal-content {
+.film-card {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -41,31 +41,25 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
     background-color: #fff;
-      @media screen and (min-width: 768px) {
-    width: 618px;
-    top: 50%;
-     transform: translate(-50%, -50%);
 
-  }
-
-  @media screen and (min-width: 1024px) {
-    width: 886px;
-     padding: 50px;
-  }
-}
-
-.film-card {
-    display: block;
-   
     @media screen and (min-width: 768px) {
-      display: flex;
+        display: flex;
+        width: 668px;
+        top: 50%;
+        transform: translate(-50%, -50%);
+
+  }
+
+    @media screen and (min-width: 1024px) {
+        width: 886px;
+        padding: 50px;
   }
 }
 
 .close-button {
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 15px;
+    right: 15px;
     display: block;
      width: 35px;
     height: 35px;
@@ -76,15 +70,15 @@
     border-radius:  50%;
     cursor: pointer;
     @media screen and (min-width: 768px) {
-         width: 45px;
-    height: 45px;
-     top: -10px;
-    right: -10px;
+        width: 45px;
+        height: 45px;
+        top: 20px;
+        right: 20px;
   }
 
   @media screen and (min-width: 1024px) {
-     top: 15px;
-    right: 15px;
+    top: 40px;
+    right: 40px;
   }
   }
   .svg-close{
@@ -92,9 +86,11 @@
     text-align: center;
     padding: 12px;
     @media screen and (min-width: 768px) {
-  padding: 16px;
+    padding: 16px;
   }
   }
+
+ 
 
 
 

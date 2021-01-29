@@ -2,19 +2,18 @@
 
 .movie-modal-image{
   margin-bottom: 30px;
-  width: 280px;
+  width: auto;
   height: 416px;
    @media screen and (min-width: 768px) {
    margin-right: 30px;
     margin-bottom: 0px;
-    width: 294px;
+    width: auto;
   height: 416px;
   }
   @media screen and (min-width: 1024px) {
-   width: 426px;
+   width: auto;
   height: 514px;
   }
- 
 }
 .movie-modal-title{
  margin-top: 0px;

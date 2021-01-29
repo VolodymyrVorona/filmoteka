@@ -477,7 +477,7 @@ img {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal-content {
+.film-card {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -490,8 +490,11 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-  .modal-content {
-    width: 618px;
+  .film-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 668px;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -499,28 +502,16 @@ img {
 }
 
 @media screen and (min-width: 1024px) {
-  .modal-content {
+  .film-card {
     width: 886px;
     padding: 50px;
   }
 }
 
-.film-card {
-  display: block;
-}
-
-@media screen and (min-width: 768px) {
-  .film-card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
 .close-button {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 15px;
+  right: 15px;
   display: block;
   width: 35px;
   height: 35px;
@@ -535,15 +526,15 @@ img {
   .close-button {
     width: 45px;
     height: 45px;
-    top: -10px;
-    right: -10px;
+    top: 20px;
+    right: 20px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .close-button {
-    top: 15px;
-    right: 15px;
+    top: 40px;
+    right: 40px;
   }
 }
 
@@ -816,7 +807,7 @@ footer > div {
 
 .movie-modal-image {
   margin-bottom: 30px;
-  width: 280px;
+  width: auto;
   height: 416px;
 }
 
@@ -824,14 +815,14 @@ footer > div {
   .movie-modal-image {
     margin-right: 30px;
     margin-bottom: 0px;
-    width: 294px;
+    width: auto;
     height: 416px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .movie-modal-image {
-    width: 426px;
+    width: auto;
     height: 514px;
   }
 }
@@ -867,7 +858,7 @@ footer > div {
   list-style: none;
   padding-left: 0px;
   font-size: 12px;
-  color: black;
+  color: #8c8c8c;
 }
 
 .movie-modal-properties li:not(:last-child) {
