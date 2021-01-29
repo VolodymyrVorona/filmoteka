@@ -14,7 +14,7 @@ fetch(
   .then(data => data.results)
   .then(movies => {
 
-// меняю жанр  и дату 
+// изменяет  жанр  и дату 
         movies.map((item) => {
             let newGenre = [];
             item.genre_ids.map((id) => {
