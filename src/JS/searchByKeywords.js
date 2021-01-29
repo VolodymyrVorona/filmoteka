@@ -13,5 +13,15 @@ refs.searchForm.addEventListener('submit', event => {
   refs.movieRef.innerHTML = '';
   form.reset();
 
-  fetchMovies(inputValue).then(searchResultsMarkup);
+  // ------------показывает  предупреждение при вводе рандомного набора символов---------------
+  fetchMovies(inputValue).then(data => {
+    if (data.length === 0) {
+      refs.warningString.classList.remove('is-hidden');
+      return;
+    }
+    refs.warningString.classList.add('is-hidden');
+    refs.movieRef.innerHTML = '';
+    searchResultsMarkup(data);
+  });
+  // fetchMovies(inputValue).then(searchResultsMarkup);
 });

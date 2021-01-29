@@ -26,12 +26,12 @@ const searchResultsMarkup = results => {
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
 
   // ------------показывает  предупреждение при вводе рандомного набора символов---------------
-  if (results.length === 0) {
-    refs.warningString.classList.remove('is-hidden');
-  }
-  if (results.length > 0) {
-    refs.warningString.classList.add('is-hidden');
-  }
+  // if (results.length === 0) {
+  //   refs.warningString.classList.remove('is-hidden');
+  // }
+  // if (results.length > 0) {
+  //   refs.warningString.classList.add('is-hidden');
+  // }
 
   // еще не решена проблема с id жанрами , пока будет так:
   let genreRef = document.querySelectorAll('.trend-film-genre');
