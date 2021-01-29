@@ -1,8 +1,8 @@
 import film from '../templates/trendMovieTemplate.hbs';
 import modalMovieTemplate from '../templates/fullDescriptionMovie.hbs';
+import refs from '../JS/refs';
+import closeModal from './modal'
 
-const movieModalRef = document.querySelector('.movie-modal');
-const movieRef = document.querySelector('.trend-movie');
 
 // Запрос на тренды
 fetch(
@@ -29,10 +29,9 @@ fetch(
 
     // делаем разметку (вставляем шаблон)
     const markup = film(newMovieList);
-    movieRef.insertAdjacentHTML('beforeend', markup);
+    refs.movieRef.insertAdjacentHTML('beforeend', markup);
 
-    let filmItemRef = document.querySelectorAll('.trend-film-item');
-    const filmCardRef = document.querySelector('.film-card');
+    const filmItemRef = document.querySelectorAll('.trend-film-item');
     let genreRef = document.querySelectorAll('.trend-film-genre');
 
     filmItemRef.forEach(data => {
@@ -50,25 +49,20 @@ fetch(
             .then(movie => {
               console.log(movie);
               const markup2 = modalMovieTemplate(movie);
-              filmCardRef.insertAdjacentHTML('beforeend', markup2);
+              refs.filmCard.insertAdjacentHTML('beforeend', markup2);
 
-              movieModalRef.classList.remove("is-hidden");
-            console.log("opening!");
-
+              refs.movieModal.classList.remove("is-hidden");
+        
             function closeModal() {
 
-                movieModalRef.classList.add('is-hidden');
-                window.removeEventListener('keydown', pressEscape)
-                console.log("closed!");
-                filmCardRef.innerHTML='';
-
-                
+                refs.movieModal.classList.add('is-hidden');
+                window.removeEventListener('keydown', pressEscape);
+                refs.filmCard.innerHTML='';                
             }
-            
-            const closeBtnRef = document.querySelector('.close-button');
-            closeBtnRef.addEventListener('click', closeModal);
-            const backdropRef = document.querySelector('.backdrop');
-            backdropRef.addEventListener('click', closeModal);
+
+            const closeModalBtn = document.querySelector('.close-button');
+            closeModalBtn.addEventListener('click', closeModal);
+            refs.backdrop.addEventListener('click', closeModal);
            
             const pressEscape = event => {
                 if (event.code === 'Escape') {
