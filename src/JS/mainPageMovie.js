@@ -51,14 +51,14 @@ fetch(
               console.log(movie);
               const markup2 = modalMovieTemplate(movie);
               filmCardRef.insertAdjacentHTML('beforeend', markup2);
-            });
-            
-            movieModalRef.classList.remove("is-hidden");
+
+              movieModalRef.classList.remove("is-hidden");
             console.log("opening!");
 
             function closeModal() {
 
                 movieModalRef.classList.add('is-hidden');
+                window.removeEventListener('keydown', pressEscape)
                 console.log("closed!");
                 filmCardRef.innerHTML='';
 
@@ -77,6 +77,9 @@ fetch(
             }            
             window.addEventListener('keydown', pressEscape);
 
+            });
+            
+            
         }
 
       });
