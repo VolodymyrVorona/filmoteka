@@ -63,7 +63,7 @@
     display: block;
      width: 35px;
     height: 35px;
-    
+        
     padding: 0;
     background-color: #fff;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -81,13 +81,36 @@
     right: 40px;
   }
   }
-  .svg-close{
-  
-    text-align: center;
-    padding: 12px;
-    @media screen and (min-width: 768px) {
-    padding: 16px;
+
+  .close {
+    position: absolute;
+    bottom: 0px;
+    left: 5px;
+    width: 32px;
+    height: 32px;
+    opacity: 0.3;
+    @media screen and (max-width: 767px) {
+        bottom: -5px;
+        left: 0px;
+    }
   }
+  .close:hover {
+    opacity: 1;
+  }
+  .close:before, .close:after {
+    position: absolute;
+    content: ' ';
+    height: 20px;
+    width: 2px;
+    background-color: grey;
+    
+
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
   }
 
  
