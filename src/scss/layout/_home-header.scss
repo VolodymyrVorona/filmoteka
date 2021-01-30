@@ -94,7 +94,6 @@
   margin-right: auto;
   margin-left: auto;
 
-
   &.is-hidden {
     display: none;
   }
@@ -109,11 +108,27 @@
     background: url(../images/search.svg);
   }
 
-
   @media screen and (min-width: 768px) {
     width: 336px;
   }
 }
+
+.search__input {
+  width: 100%;
+  height: 20px;
+  background-color: transparent;
+  border-top: none;
+  border-right: none;
+  border-bottom: 0.5px solid #ffffff;
+  border-left: none;
+  outline: none;
+  color: #ffffff;
+
+  &::placeholder {
+    color: #ffffff;
+  }
+}
+
 .js-search-btn {
   position: absolute;
   position: absolute;

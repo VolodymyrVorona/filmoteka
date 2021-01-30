@@ -114,7 +114,7 @@
     <footer>
       <div class="container">
         <p class="copyright">
-          &copy; 2020 | All Rights Reserved | Developed with
+          <span>&copy; 2020 | All Rights Reserved |</span> Developed with
           <img src="./images/heart.svg" alt="Иконка сердца" width="13" />
           by
           <a href="#" id="Open-Modal">GoIT Students</a>
@@ -124,13 +124,9 @@
 
     <!-- для модалки ( здесь вставляется шаблон) -->
     <div class="movie-modal is-hidden">
-      <div class="backdrop"></div>      
-        <div class="film-card">
-        </div>
-    
-     
+      <div class="backdrop"></div>
+      <div class="film-card"></div>
     </div>
-
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
@@ -155,7 +151,5 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
-
-
   </body>
 </html>

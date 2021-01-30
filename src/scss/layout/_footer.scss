@@ -7,11 +7,16 @@ footer > div {
   padding-top: 30px;
   padding-bottom: 28px;
   font-size: 16px;
+  @media screen and (min-width: 320px) {
+    font-size: 14px;
+  }
 }
 
 .copyright {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+
   > a {
     margin-left: 10px;
     color: $text-footer-color;
