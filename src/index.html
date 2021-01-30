@@ -107,8 +107,14 @@
     </header>
     <main>
       <div class="container">
+        <!-- cпиннер -->
+        <div id="spinner"></div>
+
         <!-- разметка для фильмов которые в тренде для главной страницы и для результатов поиска по ключевому слову-->
         <ul class="trend-movie"></ul>
+        <div id="markup-plugin">
+          <div id="tui-pagination-container" class="tui-pagination"></div>
+        </div>
       </div>
     </main>
     <footer>
@@ -124,13 +130,9 @@
 
     <!-- для модалки ( здесь вставляется шаблон) -->
     <div class="movie-modal is-hidden">
-      <div class="backdrop"></div>      
-        <div class="film-card">
-        </div>
-    
-     
+      <div class="backdrop"></div>
+      <div class="film-card"></div>
     </div>
-
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
@@ -155,7 +157,5 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
-
-
   </body>
 </html>
