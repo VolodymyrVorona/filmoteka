@@ -38,11 +38,18 @@ var opts = {
 // // разметка пагинации
 var container = document.getElementById('tui-pagination-container');
 
+// // разметка кнопок для пагинации в зависимости от ширины дисплея.
+let setVisiblePage = 0;
+if (document.documentElement.clientWidth < 768) {
+  setVisiblePage = 4;
+} else {
+  setVisiblePage = 8;
+}
 // // свойства
 var pagination = new Pagination(container, {
   totalItems: 20000,
   itemsPerPage: 20,
-  visiblePages: 8,
+  visiblePages: setVisiblePage,
 });
 
 // при клике на номер страницы - рендерится разметка
