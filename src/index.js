@@ -6,3 +6,4 @@ import './JS/auntification';
 
 import './JS/searchByKeywords';
 
+import './JS/footer-modal-about-us';
