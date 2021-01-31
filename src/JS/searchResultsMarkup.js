@@ -1,9 +1,26 @@
 import film from '../templates/trendMovieTemplate.hbs';
-import headerMarkup from '../templates/homeHeader.hbs';
 import refs from './refs';
+import genreID from '../JS/genreID';
 
 // --------выводим результат поиска  по ключевым словам------
 const searchResultsMarkup = results => {
+  // изменяет  жанр  и дату
+  results.map(item => {
+    let newGenre = [];
+    item.genre_ids.map(id => {
+      const found = genreID.find(item => item.id === id);
+      newGenre.push(found.name);
+    });
+    item.release_date = item.release_date.slice(0, 4);
+    if (newGenre.length >= 4) {
+      const manyGenres = newGenre.slice(0, 3);
+      item.genre_ids = manyGenres.join(', ');
+    } else {
+      item.genre_ids = newGenre.join(', ');
+    }
+    return item;
+  });
+
   let newMovieList = [];
 
   if (document.documentElement.clientWidth < 768) {
@@ -32,27 +49,6 @@ const searchResultsMarkup = results => {
   if (results !== []) {
     refs.warningString.classList.add('is-hidden');
   }
-
-  // еще не решена проблема с id жанрами , пока будет так:
-  let genreRef = document.querySelectorAll('.trend-film-genre');
-
-  genreRef.forEach(genre => {
-    if (genre.textContent.includes(18)) {
-      genre.textContent = 'Drama';
-    }
-    if (genre.textContent.includes(28)) {
-      genre.textContent = 'Action';
-    }
-    if (genre.textContent.includes(10752)) {
-      genre.textContent = 'War';
-    }
-  });
-  // Обрезаем лишнее в дате, оставлем только год
-  let dataRef = document.querySelectorAll('.trend-film-data');
-  dataRef.forEach(data => {
-    let newData = data.textContent.slice(0, 5);
-    data.textContent = newData;
-  });
 };
 
 export default searchResultsMarkup;

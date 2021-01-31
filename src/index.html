@@ -11,16 +11,116 @@
     />
   </head>
   <body>
+    <header class="header" id="header">
+      <div class="container">
+        <div class="menu__wrapper">
+          <a href="#" class="logo link"
+            ><svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M19.82 2H4.18C2.97602 2 2 2.97602 2 4.18V19.82C2 21.024 2.97602 22 4.18 22H19.82C21.024 22 22 21.024 22 19.82V4.18C22 2.97602 21.024 2 19.82 2Z"
+                stroke="#818181"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M7 2V22"
+                stroke="#818181"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M17 2V22"
+                stroke="#818181"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 12H22"
+                stroke="#818181"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 7H7"
+                stroke="#818181"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M2 17H7"
+                stroke="#818181"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M17 17H22"
+                stroke="#818181"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+              <path
+                d="M17 7H22"
+                stroke="#818181"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            <span class="logo__text">Filmoteka</span>
+          </a>
+
+          <nav>
+            <a class="page__link active link nav-home" href="">Home</a>
+            <a class="page__link link nav-library" href="">my library</a>
+          </nav>
+        </div>
+
+        <div class="input__wrapper">
+          <input
+            class="search__input js-search-form"
+            type="text"
+            name="search-input"
+            id="search-input"
+            placeholder="Поиск фильмов"
+            autocomplete="false"
+          />
+          <div class="input__icon"></div>
+        </div>
+        <div class="buttons-wrapper is-hidden">
+          <button class="button watched">Watched</button>
+          <button class="button header-light-btn queue">queue</button>
+        </div>
+      </div>
+    </header>
     <main>
       <div class="container">
+        <!-- cпиннер -->
+        <div id="spinner"></div>
+
         <!-- разметка для фильмов которые в тренде для главной страницы и для результатов поиска по ключевому слову-->
         <ul class="trend-movie"></ul>
+        <div id="markup-plugin">
+          <div id="tui-pagination-container" class="tui-pagination"></div>
+        </div>
       </div>
     </main>
     <footer>
       <div class="container">
         <p class="copyright">
-          &copy; 2020 | All Rights Reserved | Developed with
+          <span>&copy; 2020 | All Rights Reserved |</span> Developed with
           <img src="./images/heart.svg" alt="Иконка сердца" width="13" />
           by
           <a href="#" class="js-open-modal" data-modal="1" id="Open-Modal">GoIT Students</a>
@@ -150,11 +250,8 @@
 
     <!-- для модалки ( здесь вставляется шаблон) -->
     <div class="movie-modal is-hidden">
-      <div class="backdrop"></div>      
-        <div class="film-card">
-        </div>
-    
-     
+      <div class="backdrop"></div>
+      <div class="film-card"></div>
     </div>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -180,6 +277,5 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
-
   </body>
 </html>

@@ -1,19 +1,28 @@
 {{#each this}}
 <li class="trend-film-item list" data-film={{id}}>
+    {{#if poster_path}}
     <img class="trend-film-image" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}"
-        width="274px" height="398px">
-
+        width="274px" height="398px" loading="lazy">
+        {{else}}
+        <img  class="trend-film-image" src="https://www.deckchaircinema.com/template_1/img/default-movie-portrait.jpg" alt="Нет фото "
+        loading="lazy">
+{{/if}}
     <h2 class="trend-film-name"> {{original_title}}</h2>
     <div class="trend-film-genre-data-vote">
         <ul class="trend-film-genre">
             {{#if genre_ids}}
             <li class="genre-item">{{genre_ids}}</li>
+             {{else}}
+              <li class="genre-item">Underfined</li>
             {{/if}}
         </ul>
         <span class="trend-film-line"> | </span>
+        {{#if release_date}}
         <span class="trend-film-data"> {{release_date}}</span>
-        {{!-- можно использовать для WATCHED и QUEUE--}}
-        {{!-- <span class="trend-film-vote"> {{vote_average}}</span> --}}
+         {{else}}
+         <span class="trend-film-data">NO DATE</span>
+        {{/if}}
+       
     </div>
 </li>
 {{/each}}
