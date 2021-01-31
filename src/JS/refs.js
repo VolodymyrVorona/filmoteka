@@ -1,7 +1,3 @@
-
-import headerMarkup from '../templates/homeHeader.hbs';
-
-
 const refs = {
   linkHeader: document.querySelector('.header'),
   linkHome: document.querySelector('.nav-home'),
@@ -24,7 +20,6 @@ const refs = {
 
   movies: document.querySelector('.trend-movie'),
   targetSpinner: document.getElementById('spinner'),
-
 };
 
 export default refs;

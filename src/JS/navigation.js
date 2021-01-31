@@ -12,7 +12,7 @@ refs.linkQueue.addEventListener('click', handlerQueue);
 onHome();
 
 function onHome(e) {
-  e.preventDefault();
+  // e.preventDefault();
   hidenLibrary();
   refs.movieRef.innerHTML = '';
 
@@ -68,7 +68,7 @@ function onHome(e) {
         data.addEventListener('click', modalHandler);
 
         function modalHandler(event) {
-          event.preventDefault;
+          event.preventDefault();
 
           fetch(
             `https://api.themoviedb.org/3/movie/${filmID}?api_key=bf08c0c07642287cbabe383c02818eb3`,
