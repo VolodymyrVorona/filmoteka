@@ -1,6 +1,5 @@
 import headerMarkup from '../templates/homeHeader.hbs';
 
-
 const refs = {
   movieRef: document.querySelector('.trend-movie'),
   //   movieLibrary: document.querySelector('.js-movie-library'),
@@ -11,8 +10,9 @@ const refs = {
   filmCard: document.querySelector('.film-card'),
   movieModal: document.querySelector('.movie-modal'),
   backdrop: document.querySelector('.backdrop'),
-  closeModalBtn: document.querySelector('.close-button')
-
+  closeModalBtn: document.querySelector('.close-button'),
+  movies: document.querySelector('.trend-movie'),
+  targetSpinner: document.getElementById('spinner'),
 };
 
 export default refs;

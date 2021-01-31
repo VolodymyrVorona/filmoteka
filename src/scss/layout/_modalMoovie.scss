@@ -1,129 +1,126 @@
 // Модалка
 
-.movie-modal-image{
+.movie-modal-image {
   margin-bottom: 30px;
   width: auto;
   height: 416px;
-   @media screen and (min-width: 768px) {
-   margin-right: 30px;
+  @media screen and (min-width: 768px) {
+    margin-right: 30px;
     margin-bottom: 0px;
     width: auto;
-  height: 416px;
+    height: 416px;
   }
   @media screen and (min-width: 1024px) {
-   width: auto;
-  height: 514px;
+    width: auto;
+    height: 514px;
   }
 }
-.movie-modal-title{
- margin-top: 0px;
- margin-bottom: 25px;
- font-size: 20px;
- line-height: 1.15;
-text-transform:uppercase;
+.movie-modal-title {
+  margin-top: 0px;
+  margin-bottom: 25px;
+  font-size: 20px;
+  line-height: 1.15;
+  text-transform: uppercase;
   @media screen and (min-width: 768px) {
-   margin-bottom: 20px;
- font-size: 30px;
- line-height: 1.17;
+    margin-bottom: 20px;
+    font-size: 30px;
+    line-height: 1.17;
   }
-
 }
-.movie-modal-properties-values{
+.movie-modal-properties-values {
   display: flex;
   margin-bottom: 20px;
 }
-.list{
-  margin:0px;
+.list {
+  margin: 0px;
 }
 
-.movie-modal-properties{
- list-style: none;
- padding-left:0px;
+.movie-modal-properties {
+  list-style: none;
+  padding-left: 0px;
 
- font-size: 12px;
- color: $text-modal-window-color;
+  font-size: 12px;
+  color: $text-modal-window-color;
 }
-.movie-modal-properties li:not(:last-child){
+.movie-modal-properties li:not(:last-child) {
   margin-bottom: 10px;
 }
-.movie-modal-values{
- list-style: none;
- padding-left:0px;
- margin-left: 39px;
- line-height: 1.16; 
- @media screen and (min-width: 1024px) {
-margin-left: 83px;
+.movie-modal-values {
+  list-style: none;
+  padding-left: 0px;
+  margin-left: 39px;
+  line-height: 1.16;
+  @media screen and (min-width: 1024px) {
+    margin-left: 83px;
   }
 }
-.modal-original-title{
-  text-transform:uppercase;
+.modal-original-title {
+  text-transform: uppercase;
   line-height: 1.33;
 }
 .modal-genre {
   line-height: 1.33;
-  
 }
-.modal-genre-item{
- margin-right: 5px;
+.modal-genre-item {
+  margin-right: 5px;
 }
-.movie-modal-values li:not(:last-child){
+.movie-modal-values li:not(:last-child) {
   margin-bottom: 10px;
 }
 .modal-genre {
- display: flex;
+  display: flex;
 }
 .about-modal {
   margin-top: 0px;
   margin-bottom: 10px;
-   font-size: 12px;
-line-height: 1.33;
+  font-size: 12px;
+  line-height: 1.33;
 
-text-transform: uppercase;
+  text-transform: uppercase;
 }
 .about-modal-description {
- margin-top: 0px;
- margin-bottom: 20px;
+  margin-top: 0px;
+  margin-bottom: 20px;
 
-font-size: 12px;
-line-height: 1.66;
-
+  font-size: 12px;
+  line-height: 1.66;
 }
-.modal-vote{
- display: block;
-  background-color:$button-main-background-color;
+.modal-vote {
+  display: block;
+  background-color: $button-main-background-color;
   width: 36px;
   text-align: center;
-  border-radius:5px;
+  border-radius: 5px;
   color: $text-dark-theme-color;
 }
 
 .modal-count {
   display: block;
   text-align: center;
- background-color: #F7F7F7;
-     width: 36px;
-      border-radius:5px
+  background-color: #f7f7f7;
+  width: 36px;
+  border-radius: 5px;
 }
 .modal-line {
-   background-color: transparent;
-   display: block;
-       width: 8px;
-       text-align: center;
-       color:$text-modal-window-color;
+  background-color: transparent;
+  display: block;
+  width: 8px;
+  text-align: center;
+  color: $text-modal-window-color;
 }
 .modal-vote-count {
   display: flex;
 }
-.buttons-wrapper{
+.buttons-wrapper.movie-button {
   justify-content: left;
 }
-.movie-modal-full-description{
+.movie-modal-full-description {
   width: 279px;
-    @media screen and (min-width: 768px) {
-   width: 294px;
+  @media screen and (min-width: 768px) {
+    width: 294px;
   }
 
   @media screen and (min-width: 1024px) {
-   width: 426px;
+    width: 426px;
   }
 }

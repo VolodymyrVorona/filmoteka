@@ -1,5 +1,10 @@
+ {{#if poster_path}}
 <img class="movie-modal-image" src=https://image.tmdb.org/t/p/w500{{poster_path}} alt="{{original_title}}" width="426px"
     height="514px" loading="lazy">
+    {{else}}
+        <img  class="movie-modal-image" src="https://123moviesfree.zone/no-poster.png" alt="Нет фото"
+        loading="lazy">
+{{/if}}
 <div class="movie-modal-full-description">
     <h2 class="movie-modal-title"> {{original_title}}</h2>
     <div class="movie-modal-properties-values">
@@ -27,7 +32,7 @@
     <h3 class="about-modal">About</h3>
     <p class="about-modal-description">{{overview}}</p>
 
-    <div class="buttons-wrapper">
+    <div class="buttons-wrapper movie-button">
         <button class="button js-add-to-watched" disabled>add to Watched</button>
         <button class="button modal-light-btn js-add-to-queue" disabled>add to queue</button>
     </div>
