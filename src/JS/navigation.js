@@ -1,6 +1,9 @@
 import film from '../templates/trendMovieTemplate.hbs';
 import refs from './refs';
 import getMovieFromSaved from './getMovieFromSaved';
+import { Spinner } from 'spin.js';
+// // импорт опций спинеера
+import opts from './spinner';
 
 import {
   changeGenreData,
@@ -19,8 +22,10 @@ refs.linkQueue.addEventListener('click', handlerQueue);
 
 function onHome(e) {
   e.preventDefault();
+  var spinner = new Spinner(opts).spin(refs.targetSpinner);
   hidenLibrary();
   refs.movieRef.innerHTML = '';
+
   fetch(
     'https://api.themoviedb.org/3/trending/movie/day?api_key=bf08c0c07642287cbabe383c02818eb3',
   )
@@ -37,6 +42,7 @@ function onHome(e) {
       const markup = film(newFilmCount);
       refs.movies.insertAdjacentHTML('beforeend', markup);
 
+      spinner.stop();
       storageModal();
     });
 }
