@@ -19,14 +19,6 @@ const searchResultsMarkup = results => {
   refs.movies.insertAdjacentHTML('beforeend', markup);
 
   storageModal();
-
-  // ------------условие для вывода предупреждения---------------
-  if (results === []) {
-    refs.warningString.classList.remove('is-hidden');
-  }
-  if (results !== []) {
-    refs.warningString.classList.add('is-hidden');
-  }
 };
 
 export default searchResultsMarkup;
