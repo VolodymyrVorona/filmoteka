@@ -1,5 +1,3 @@
-// import headerMarkup from '../templates/homeHeader.hbs';
-
 const refs = {
   linkHeader: document.querySelector('.header'),
   linkHome: document.querySelector('.nav-home'),
