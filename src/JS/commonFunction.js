@@ -52,12 +52,13 @@ function storageModal() {
   filmItemRef.forEach(data => {
     // берем id фильма
     let filmID = data.dataset.film;
-
+    
     // Вешаем на картинку слушателя, чтобы открывалась модалка
     data.addEventListener('click', modalHandler);
 
     function modalHandler(event) {
       event.preventDefault();
+      
 
       fetch(
         `https://api.themoviedb.org/3/movie/${filmID}?api_key=bf08c0c07642287cbabe383c02818eb3`,
@@ -69,6 +70,7 @@ function storageModal() {
           filmCardRef.insertAdjacentHTML('beforeend', markup2);
 
           refs.movieModal.classList.remove('is-hidden');
+          refs.body.classList.add('modal-overflow')
 
           // додаємо роботу із localStorage
           // беремо посилання на кнопки
@@ -92,6 +94,7 @@ function storageModal() {
 
           function closeModal() {
             refs.movieModal.classList.add('is-hidden');
+            refs.body.classList.remove('modal-overflow');
             window.removeEventListener('keydown', pressEscape);
             filmCardRef.innerHTML = '';
           }

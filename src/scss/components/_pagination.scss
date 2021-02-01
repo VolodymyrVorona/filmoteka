@@ -2,6 +2,10 @@
   background-color: $accent-color;
 }
 
+#markup-plugin .tui-pagination {
+  margin: 35px 0 60px 0;
+}
+
 #markup-plugin .tui-pagination .tui-first-child.tui-is-selected {
   border-left: 1px solid $accent-color;
 }
@@ -11,6 +15,9 @@
   background: $accent-color;
   border-color: $accent-color;
   border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  line-height: 2;
 }
 #markup-plugin .tui-pagination .tui-page-btn {
   border: none;
