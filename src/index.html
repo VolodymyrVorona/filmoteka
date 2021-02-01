@@ -12,6 +12,71 @@
   </head>
   <body>
     <main>
+      <div class="container-sign_in is-hidden " id="sign_in">
+          <div class="tab ">
+            <div class="tab-content tabs">
+              <div
+                role="tabpanel"
+                class="tab-pane fade "
+                id="Section1"
+              >
+                <h1 class="text">Sign In</h1>
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                    />
+                  </div>
+                  <div class="form-group">
+                  <button class="signUpbtn btn" >  Login </button>
+                  </div>
+                  <div class="form-group forgot-pass">
+                    <button class="btn"> Forgot password</button></div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="container-sign_up is-hidden " id="sign_up">
+              <div role="tabpanel" class="tab" id="Section2">
+                <h1 class="text">Get Started now</h1>
+                <form class="form-horizontal">
+                  <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input
+                      type="textEmailAddress"
+                      class="form-control"
+                      id="email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input
+                      type="textPassword"
+                      class="form-control"
+                      id="password"
+                    />
+                  </div>
+                  <div class="form-group">
+                   <button class="signUpbtn btn" id = "signUpBtn"> Sign up </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="container">
         <!-- разметка для фильмов которые в тренде для главной страницы и для результатов поиска по ключевому слову-->
         <ul class="trend-movie"></ul>
@@ -33,36 +98,17 @@
       <div class="backdrop"></div>
       <div class="modal-content">
         <div class="film-card">
-          <button class="close-button" type="button" data-modal-close><img class="svg-close" src="./images/close-button.svg"
-              alt="Закрыть" /></button>
+          <button class="close-button" type="button" data-modal-close>
+            <img
+              class="svg-close"
+              src="./images/close-button.svg"
+              alt="Закрыть"
+            />
+          </button>
         </div>
       </div>
-     
     </div>
-
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
-
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
     <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
-
-    <script>
-      // Your web app's Firebase configuration
-      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-      var firebaseConfig = {
-        apiKey: 'AIzaSyDk7QuF0N971UQ7B7P7vr3TDlcSPjXDgOo',
-        authDomain: 'filmoteka-92820.firebaseapp.com',
-        projectId: 'filmoteka-92820',
-        storageBucket: 'filmoteka-92820.appspot.com',
-        messagingSenderId: '466516500538',
-        appId: '1:466516500538:web:eb00eb8ab0589fee1cd503',
-        measurementId: 'G-DHVDN5240J',
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
-    </script>
-
   </body>
 </html>
