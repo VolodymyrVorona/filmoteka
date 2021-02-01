@@ -1,4 +1,7 @@
 // backdrop styles
+.modal-overflow {
+  overflow: hidden;
+}
 
 .movie-modal {
     position: fixed;
@@ -10,8 +13,8 @@
   
     opacity: 1;
     transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
-    overflow-y: scroll;
+ 
+    
 }
   
 .movie-modal.is-hidden {
@@ -25,11 +28,13 @@
 
 .backdrop{
     position: absolute;
+    
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.8);
+    
 }
 
 .film-card {
