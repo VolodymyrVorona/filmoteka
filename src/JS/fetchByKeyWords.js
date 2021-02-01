@@ -1,5 +1,3 @@
-import refs from './refs';
-
 // ------ фетч фильмов по ключевым словам ------
 const fetchMovies = searchQuery => {
   const apiKey = 'bf08c0c07642287cbabe383c02818eb3';

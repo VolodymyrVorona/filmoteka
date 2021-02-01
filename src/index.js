@@ -1,9 +1,8 @@
 import './scss/main.scss';
+import './JS/searchByKeywords';
 import './JS/mainPageMovie';
 
 import './JS/auntification';
-
-import './JS/searchByKeywords';
 
 import './JS/footer-modal-about-us';
 

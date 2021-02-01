@@ -2,9 +2,9 @@
 <li class="trend-film-item list" data-film={{id}}>
     {{#if poster_path}}
     <img class="trend-film-image" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}"
-        width="274px" height="398px" loading="lazy">
+         loading="lazy">
         {{else}}
-        <img  class="trend-film-image" src="https://www.deckchaircinema.com/template_1/img/default-movie-portrait.jpg" alt="Нет фото "
+        <img  class="trend-film-image" src="https://www.deckchaircinema.com/template_1/img/default-movie-portrait.jpg" alt="Нет фото"
         loading="lazy">
 {{/if}}
     <h2 class="trend-film-name"> {{original_title}}</h2>
