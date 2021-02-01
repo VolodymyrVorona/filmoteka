@@ -17,7 +17,8 @@ refs.linkQueue.addEventListener('click', handlerQueue);
 // вызывает сразу в разметку - получается вместе 18 штук (пока закоментила -нужно будет убрать)
 // onHome();
 
-function onHome() {
+function onHome(e) {
+  e.preventDefault();
   hidenLibrary();
   refs.movieRef.innerHTML = '';
   fetch(
@@ -48,6 +49,7 @@ function onLibrary(e) {
   const markup = film(getMovieFromSaved('watched'));
   // console.log(markup);
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
+  storageModal();
 }
 
 function handlerWatched() {
@@ -55,6 +57,7 @@ function handlerWatched() {
   const markup = film(getMovieFromSaved('watched'));
 
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
+  storageModal();
 }
 
 function handlerQueue() {
@@ -62,6 +65,7 @@ function handlerQueue() {
   const markup = film(getMovieFromSaved('queue'));
 
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
+  storageModal();
 }
 
 function hidenLibrary() {
@@ -70,6 +74,7 @@ function hidenLibrary() {
   refs.linkInput.classList.remove('is-hidden');
   refs.linkButtons.classList.add('is-hidden');
   refs.linkHeader.classList.remove('library');
+  refs.divPagination.classList.remove('turnoff');
 }
 
 function hidenHome() {
@@ -78,4 +83,5 @@ function hidenHome() {
   refs.linkInput.classList.add('is-hidden');
   refs.linkButtons.classList.remove('is-hidden');
   refs.linkHeader.classList.add('library');
+  refs.divPagination.classList.add('turnoff');
 }

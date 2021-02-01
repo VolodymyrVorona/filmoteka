@@ -17,6 +17,7 @@ const refs = {
   movieModal: document.querySelector('.movie-modal'),
   backdrop: document.querySelector('.backdrop'),
   closeModalBtn: document.querySelector('.close-button'),
+  divPagination: document.querySelector('.tui-pagination'),
 
   movies: document.querySelector('.trend-movie'),
   targetSpinner: document.getElementById('spinner'),
