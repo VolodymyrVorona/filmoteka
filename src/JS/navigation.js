@@ -1,4 +1,5 @@
 import film from '../templates/trendMovieTemplate.hbs';
+import filmLibrary from '../templates/libraryMovieTemplate.hbs';
 import refs from './refs';
 import getMovieFromSaved from './getMovieFromSaved';
 
@@ -46,22 +47,31 @@ function onLibrary(e) {
 
   hidenHome();
   refs.movieRef.innerHTML = '';
-  const markup = film(getMovieFromSaved('watched'));
+  const markup = filmLibrary(getMovieFromSaved('watched'));
   // console.log(markup);
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
   storageModal();
 }
 
 function handlerWatched() {
+  refs.linkWatched.classList.remove('noactive');
+  refs.linkQueue.classList.add('noactive');
+
   refs.movieRef.innerHTML = '';
-  const markup = film(getMovieFromSaved('watched'));
+  console.log(getMovieFromSaved('watched'));
+
+  const markup = filmLibrary(getMovieFromSaved('watched'));
 
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
   storageModal();
 }
 
 function handlerQueue() {
+  refs.linkWatched.classList.add('noactive');
+  refs.linkQueue.classList.remove('noactive');
+
   refs.movieRef.innerHTML = '';
+  console.log(getMovieFromSaved('queue'));
   const markup = film(getMovieFromSaved('queue'));
 
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
