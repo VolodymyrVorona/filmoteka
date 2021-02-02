@@ -21,7 +21,7 @@ var container = document.getElementById('tui-pagination-container');
 // // разметка кнопок для пагинации в зависимости от ширины дисплея.
 let setVisiblePage = 0;
 if (document.documentElement.clientWidth < 768) {
-  setVisiblePage = 4;
+  setVisiblePage = 3;
 } else {
   setVisiblePage = 8;
 }

@@ -18,15 +18,14 @@ div.buttons-wrapper {
   text-transform: uppercase;
   color: $text-dark-theme-color;
   background-color: $button-main-background-color;
+  &.noactive {
+    border: 1px solid #ffffff;
+    background-color: transparent;
+  }
 }
 
 .button:not(:last-child) {
   margin-right: 15px;
-}
-
-.header-light-btn {
-  border: 1px solid #ffffff;
-  background-color: transparent;
 }
 
 .modal-light-btn {
@@ -35,8 +34,23 @@ div.buttons-wrapper {
   background-color: transparent;
 }
 
+.button:hover,
+.button:focus {
+  background-color: $hover-btn-main-background-color;
+}
+
+.header-light-btn:hover,
+.header-light-btn:focus {
+  background-color: $hover-header-light-btn-background-color;
+}
+
+.modal-light-btn:hover,
+.modal-light-btn:focus {
+  background-color: $hover-light-btn-background-color;
+}
+
 .button[disabled] {
-  background-color: rgba(255, 107, 1, 0.5);
+  background-color: $disabled-btn-main-background-color;
 }
 
 .button.modal-light-btn[disabled] {
