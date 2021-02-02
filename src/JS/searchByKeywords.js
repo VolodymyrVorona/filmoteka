@@ -17,7 +17,7 @@ refs.linkInput.addEventListener('submit', event => {
   console.log(form.elements);
   const inputValue = form.elements.query.value;
   console.log(inputValue);
-  refs.movieRef.innerHTML = '';
+  // refs.movieRef.innerHTML = '';
   form.reset();
 
   // ------------показывает  предупреждение при вводе рандомного набора символов---------------
@@ -35,7 +35,7 @@ refs.linkInput.addEventListener('submit', event => {
       } else {
         // якщо отримали коректні результати, здійснюємо рендер розмітки
         refs.warningString.classList.add('is-hidden');
-        // refs.movieRef.innerHTML = '';
+        refs.movieRef.innerHTML = '';
         searchResultsMarkup(data);
       }
     })
