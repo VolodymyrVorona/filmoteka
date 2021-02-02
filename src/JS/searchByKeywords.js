@@ -17,7 +17,6 @@ refs.linkInput.addEventListener('submit', event => {
 
   const inputValue = form.elements.query.value;
 
-  refs.movieRef.innerHTML = '';
   form.reset();
 
   // ------------показывает  предупреждение при вводе рандомного набора символов---------------
@@ -37,9 +36,15 @@ refs.linkInput.addEventListener('submit', event => {
       } else {
         // якщо отримали коректні результати, здійснюємо рендер розмітки
         refs.warningString.classList.add('is-hidden');
-        // refs.movieRef.innerHTML = '';
+        refs.movieRef.innerHTML = '';
         searchResultsMarkup(data);
       }
     })
-    .catch(error => console.log(error));
+    .catch(error => console.log(error))
+    .finally(() => {
+      spinner.stop();
+      refs.searchForm.addEventListener('blur', () => {
+        refs.warningString.textContent = '';
+      });
+    });
 });
