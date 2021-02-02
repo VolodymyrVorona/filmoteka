@@ -3,7 +3,10 @@ a:focus {
   outline: none;
   text-decoration: none;
 }
-
+.sign_btn {
+  background-color: transparent;
+  border: none;
+}
 .container-sign_in,
 .container-sign_up {
   position: fixed;
@@ -15,6 +18,7 @@ a:focus {
   background-color: rgba(0, 0, 0, 0.8);
   z-index: 1000;
   transition: opacity 400ms ease-in;
+  display: block;
 }
 
 .tab {
@@ -30,10 +34,9 @@ a:focus {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  opacity: 1;
 }
 .is-hidden {
-  opacity: 0;
+  display: none;
 }
 .tab .tab-content {
   padding: 5px 0 0 0;
