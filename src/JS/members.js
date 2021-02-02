@@ -10,11 +10,11 @@ function footerModalHandler(event) {
 
     const footerModal = document.querySelector('.footer-modal');
     footerModal.classList.remove('is_hidden');
-    // refs.body.classList.add('modal-overflow')
+    refs.body.classList.add('modal-overflow')
    
     function closeFooterModal() {
             footerModal.classList.add('is_hidden');
-            // refs.body.classList.remove('modal-overflow');
+            refs.body.classList.remove('modal-overflow');
             window.removeEventListener('keydown', pressEscape);
           }
         
