@@ -1,0 +1,72 @@
+// trend film - для главной страницы
+.trend-film-item {
+  list-style: none;
+  transition: all 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.trend-movie {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px -15px;
+}
+
+.trend-film-item {
+  margin: 15px;
+  @media screen and (min-width: 360px) {
+    width: calc((100% - 2 * 15px));
+  }
+  @media screen and (min-width: 768px) {
+    width: calc((100% - 4 * 15px) / 2);
+  }
+  @media screen and (min-width: 1024px) {
+    width: calc((100% - 6 * 15px) / 3);
+  }
+}
+
+.trend-film-image {
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+.trend-film-name {
+  margin: 0px;
+  font-size: 12px;
+  line-height: 1.14;
+  text-transform: uppercase;
+}
+.trend-film-genre {
+  // margin:0px;
+  padding: 0px;
+  display: flex;
+}
+.genre-item {
+  list-style: none;
+}
+
+.trend-film-data {
+  margin: 0px;
+}
+.trend-film-genre-data-vote {
+  display: flex;
+  color: $accent-color;
+}
+.trend-film-line {
+  margin-right: 3px;
+  margin-left: 3px;
+}
+
+.trend-film-vote {
+  display: block;
+  background-color: $button-main-background-color;
+  width: 36px;
+  text-align: center;
+  border-radius: 5px;
+  color: $text-dark-theme-color;
+  margin-left: 10px;
+}
+.trend-film-item:hover,
+.trend-film-item:focus {
+  cursor: pointer;
+  box-shadow: 5px 5px 5px -5px rgba(4, 4, 4, 0.6);
+  border-radius: 5px;
+  transform: scale(1.06);
+}

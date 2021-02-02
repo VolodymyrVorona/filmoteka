@@ -1,5 +1,6 @@
 .header {
   &.library {
+    display: block;
     background-image: linear-gradient(rgba(0, 0, 0, 0.56), rgba(0, 0, 0, 0.56)),
       url(../images/mobile-library/mobile-library.jpg);
   }

@@ -477,7 +477,7 @@ img {
   background-color: rgba(0, 0, 0, 0.8);
 }
 
-.modal-content {
+.film-card {
   position: absolute;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -490,8 +490,11 @@ img {
 }
 
 @media screen and (min-width: 768px) {
-  .modal-content {
-    width: 618px;
+  .film-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 668px;
     top: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
@@ -499,28 +502,16 @@ img {
 }
 
 @media screen and (min-width: 1024px) {
-  .modal-content {
+  .film-card {
     width: 886px;
     padding: 50px;
   }
 }
 
-.film-card {
-  display: block;
-}
-
-@media screen and (min-width: 768px) {
-  .film-card {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-}
-
 .close-button {
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 15px;
+  right: 15px;
   display: block;
   width: 35px;
   height: 35px;
@@ -535,27 +526,54 @@ img {
   .close-button {
     width: 45px;
     height: 45px;
-    top: -10px;
-    right: -10px;
+    top: 20px;
+    right: 20px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .close-button {
-    top: 15px;
-    right: 15px;
+    top: 40px;
+    right: 40px;
   }
 }
 
-.svg-close {
-  text-align: center;
-  padding: 12px;
+.close {
+  position: absolute;
+  bottom: 0px;
+  left: 5px;
+  width: 32px;
+  height: 32px;
+  opacity: 0.3;
 }
 
-@media screen and (min-width: 768px) {
-  .svg-close {
-    padding: 16px;
+@media screen and (max-width: 767px) {
+  .close {
+    bottom: -5px;
+    left: 0px;
   }
+}
+
+.close:hover {
+  opacity: 1;
+}
+
+.close:before, .close:after {
+  position: absolute;
+  content: ' ';
+  height: 20px;
+  width: 2px;
+  background-color: grey;
+}
+
+.close:before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.close:after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 .header {
@@ -654,10 +672,19 @@ img {
   margin-left: auto;
 }
 
-.input__wrapper > .input__icon {
+@media screen and (min-width: 768px) {
+  .input__wrapper {
+    width: 336px;
+  }
+}
+
+.js-search-btn {
+  position: absolute;
   position: absolute;
   top: 50%;
   right: 0;
+  border: none;
+  outline: none;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   width: 12px;
@@ -665,13 +692,7 @@ img {
   background: url(../images/search.svg);
 }
 
-@media screen and (min-width: 768px) {
-  .input__wrapper {
-    width: 336px;
-  }
-}
-
-.search__input {
+.js-input {
   width: 100%;
   height: 20px;
   background-color: transparent;
@@ -683,20 +704,32 @@ img {
   color: #ffffff;
 }
 
-.search__input::-webkit-input-placeholder {
+.js-input::-webkit-input-placeholder {
   color: #ffffff;
 }
 
-.search__input:-ms-input-placeholder {
+.js-input:-ms-input-placeholder {
   color: #ffffff;
 }
 
-.search__input::-ms-input-placeholder {
+.js-input::-ms-input-placeholder {
   color: #ffffff;
 }
 
-.search__input::placeholder {
+.js-input::placeholder {
   color: #ffffff;
+}
+
+.js-warning {
+  margin-top: 22px;
+  text-align: center;
+  color: #ff001b;
+  font-size: 14px;
+  line-height: 1, 17;
+}
+
+.js-warning.is-hidden {
+  display: none;
 }
 
 @media screen and (min-width: 480px) and (max-width: 959px) {
@@ -801,7 +834,7 @@ footer > div {
 
 .movie-modal-image {
   margin-bottom: 30px;
-  width: 280px;
+  width: auto;
   height: 416px;
 }
 
@@ -809,21 +842,21 @@ footer > div {
   .movie-modal-image {
     margin-right: 30px;
     margin-bottom: 0px;
-    width: 294px;
+    width: auto;
     height: 416px;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .movie-modal-image {
-    width: 426px;
+    width: auto;
     height: 514px;
   }
 }
 
 .movie-modal-title {
   margin-top: 0px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   font-size: 20px;
   line-height: 1.15;
   text-transform: uppercase;
