@@ -18,15 +18,14 @@ div.buttons-wrapper {
   text-transform: uppercase;
   color: $text-dark-theme-color;
   background-color: $button-main-background-color;
+  &.noactive {
+    border: 1px solid #ffffff;
+    background-color: transparent;
+  }
 }
 
 .button:not(:last-child) {
   margin-right: 15px;
-}
-
-.header-light-btn {
-  border: 1px solid #ffffff;
-  background-color: transparent;
 }
 
 .modal-light-btn {
