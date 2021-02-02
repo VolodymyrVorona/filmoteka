@@ -53,6 +53,9 @@ function onLibrary(e) {
 }
 
 function handlerWatched() {
+  refs.linkWatched.classList.remove('noactive');
+  refs.linkQueue.classList.add('noactive');
+
   refs.movieRef.innerHTML = '';
   const markup = film(getMovieFromSaved('watched'));
 
@@ -61,6 +64,9 @@ function handlerWatched() {
 }
 
 function handlerQueue() {
+  refs.linkWatched.classList.add('noactive');
+  refs.linkQueue.classList.remove('noactive');
+
   refs.movieRef.innerHTML = '';
   const markup = film(getMovieFromSaved('queue'));
 
