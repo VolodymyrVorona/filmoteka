@@ -14,15 +14,16 @@ refs.linkInput.addEventListener('submit', event => {
   // запуск спиннера
   var spinner = new Spinner(opts).spin(refs.targetSpinner);
   const form = event.currentTarget;
-  console.log(form.elements);
+
   const inputValue = form.elements.query.value;
-  console.log(inputValue);
+
   refs.movieRef.innerHTML = '';
   form.reset();
 
   // ------------показывает  предупреждение при вводе рандомного набора символов---------------
   fetchMovies(inputValue)
     .then(data => {
+      spinner.stop();
       if (data.errors) {
         // якщо не ввели дані в input, отримуємо помилку, виводимо її текст
         refs.warningString.classList.remove('is-hidden');
@@ -39,6 +40,5 @@ refs.linkInput.addEventListener('submit', event => {
         searchResultsMarkup(data);
       }
     })
-    .catch(error => console.log(error))
-    .finally(spinner.stop());
+    .catch(error => console.log(error));
 });
