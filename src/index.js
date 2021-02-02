@@ -4,7 +4,8 @@ import './JS/mainPageMovie';
 
 import './JS/auntification';
 
-import './JS/footer-modal-about-us';
+import './JS/members.js';
+// import './JS/footer-modal-about-us';
 
 import './JS/pagination';
 import './JS/navigation';
