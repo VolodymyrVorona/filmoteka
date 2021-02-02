@@ -40,5 +40,10 @@ refs.linkInput.addEventListener('submit', event => {
       }
     })
     .catch(error => console.log(error))
-    .finally(spinner.stop());
+    .finally(() => {
+      spinner.stop();
+      refs.searchForm.addEventListener('blur', () => {
+        refs.warningString.textContent = '';
+      });
+    });
 });
