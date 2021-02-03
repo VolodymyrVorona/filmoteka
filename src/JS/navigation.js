@@ -10,6 +10,7 @@ import {
   changeGenreData,
   changeNumberOfItem,
   storageModal,
+  changeGenreDataLibrary,
 } from './commonFunction';
 
 refs.linkHome.addEventListener('click', onHome);
@@ -53,8 +54,9 @@ function onLibrary(e) {
 
   hidenHome();
   refs.movieRef.innerHTML = '';
-  const markup = filmLibrary(getMovieFromSaved('watched'));
-  // console.log(markup);
+  const movies = getMovieFromSaved('watched');
+  changeGenreDataLibrary(movies);
+  const markup = filmLibrary(movies);
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
   storageModal();
 }
@@ -64,9 +66,9 @@ function handlerWatched() {
   refs.linkQueue.classList.add('noactive');
 
   refs.movieRef.innerHTML = '';
-  console.log(getMovieFromSaved('watched'));
-
-  const markup = filmLibrary(getMovieFromSaved('watched'));
+  const movies = getMovieFromSaved('watched');
+  changeGenreDataLibrary(movies);
+  const markup = filmLibrary(movies);
 
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
   storageModal();
@@ -77,8 +79,9 @@ function handlerQueue() {
   refs.linkQueue.classList.remove('noactive');
 
   refs.movieRef.innerHTML = '';
-  console.log(getMovieFromSaved('queue'));
-  const markup = film(getMovieFromSaved('queue'));
+  const movies = getMovieFromSaved('queue');
+  changeGenreDataLibrary(movies);
+  const markup = filmLibrary(movies);
 
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
   storageModal();
