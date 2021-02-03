@@ -7,7 +7,6 @@ import './JS/mainPageMovie';
 // import './JS/signIn_modal';
 
 import './JS/searchByKeywords';
-import './JS/footer-modal-about-us';
 
 import './JS/members.js';
 
