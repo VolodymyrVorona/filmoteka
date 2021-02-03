@@ -32,7 +32,7 @@ refs.linkInput.addEventListener('submit', event => {
         // якщо ввели неіснуюче слово, від бекенду отримужмо порожній масив. Виводимо текст із макету
         refs.warningString.classList.remove('is-hidden');
         refs.warningString.textContent =
-          'Search result not successful. Enter the correct movie name';
+          'Search result not successful. Enter correct movie name';
       } else {
         // якщо отримали коректні результати, здійснюємо рендер розмітки
         refs.warningString.classList.add('is-hidden');
