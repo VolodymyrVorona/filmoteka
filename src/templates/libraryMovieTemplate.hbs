@@ -10,9 +10,11 @@
     <h2 class="trend-film-name"> {{original_title}}</h2>
     <div class="trend-film-genre-data-vote">
         <ul class="trend-film-genre">
-           {{#each genres}}
-            <li>{{this.name}}</li>
-            {{/each}}
+          {{#if genres}}
+            <li class="genre-item">{{genres}}</li>
+             {{else}}
+              <li class="genre-item">Underfined</li>
+            {{/if}}
         </ul>
         <span class="trend-film-line"> | </span>
         {{#if release_date}}
@@ -20,7 +22,7 @@
          {{else}}
          <span class="trend-film-data">NO DATE</span>
         {{/if}}
-       
+       <span class="trend-film-vote">{{vote_average}}</span>
     </div>
 </li>
 {{/each}}

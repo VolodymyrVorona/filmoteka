@@ -10,14 +10,16 @@ import {
   changeGenreData,
   changeNumberOfItem,
   storageModal,
+  changeGenreDataLibrary,
 } from './commonFunction';
 
 refs.linkHome.addEventListener('click', onHome);
 refs.linkLogo.addEventListener('click', onHome);
 refs.linkMyLibrary.addEventListener('click', onLibrary);
-refs.linkWatched.addEventListener('click', handlerWatched);
+refs.linkWatched.addEventListener('click', onLibrary);
 refs.linkQueue.addEventListener('click', handlerQueue);
 
+storageModal();
 // вызывает сразу в разметку - получается вместе 18 штук (пока закоментила -нужно будет убрать)
 // onHome();
 
@@ -48,39 +50,48 @@ function onHome(e) {
     });
 }
 
+// callback при клику на my-library and Watched
 function onLibrary(e) {
   e.preventDefault();
-
-  hidenHome();
-  refs.movieRef.innerHTML = '';
-  const markup = filmLibrary(getMovieFromSaved('watched'));
-  // console.log(markup);
-  refs.movieRef.insertAdjacentHTML('beforeend', markup);
-  storageModal();
-}
-
-function handlerWatched() {
+  // змінює кнопку на активну
   refs.linkWatched.classList.remove('noactive');
   refs.linkQueue.classList.add('noactive');
+  hidenHome();
 
+  // очищує сторінку від фільмів
   refs.movieRef.innerHTML = '';
-  console.log(getMovieFromSaved('watched'));
 
-  const markup = filmLibrary(getMovieFromSaved('watched'));
+  // записує дані з Localstoradge в перемінну
+  const movies = getMovieFromSaved('watched');
 
+  // змінює жанр і дату
+  changeGenreDataLibrary(movies);
+
+  // рендерить дані по шаблону і вставляє в html
+  const markup = filmLibrary(movies);
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
+  // викликає модалку
   storageModal();
 }
 
+// callback при клику на Queue
 function handlerQueue() {
+  // змінює кнопку на активну
   refs.linkWatched.classList.add('noactive');
   refs.linkQueue.classList.remove('noactive');
 
+  // очищує сторінку від фільмів
   refs.movieRef.innerHTML = '';
-  console.log(getMovieFromSaved('queue'));
-  const markup = film(getMovieFromSaved('queue'));
+  const movies = getMovieFromSaved('queue');
 
+  // змінює жанр і дату
+  changeGenreDataLibrary(movies);
+
+  // рендерить дані по шаблону і вставляє в html
+  const markup = filmLibrary(movies);
   refs.movieRef.insertAdjacentHTML('beforeend', markup);
+
+  // викликає модалку
   storageModal();
 }
 

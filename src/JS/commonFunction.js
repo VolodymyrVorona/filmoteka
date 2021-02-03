@@ -26,6 +26,27 @@ function changeGenreData(filmsData) {
   });
 }
 
+// изменяет  жанр  и дату для My-library
+function changeGenreDataLibrary(filmsData) {
+  filmsData.map(item => {
+    let newGenre = [];
+    item.genres.forEach(({ id }) => {
+      const found = genreID.find(item => item.id === id);
+      newGenre.push(found.name);
+    });
+    if (item.release_date) {
+      item.release_date = item.release_date.slice(0, 4);
+    }
+    if (newGenre.length >= 4) {
+      const manyGenres = newGenre.slice(0, 3);
+      item.genres = manyGenres.join(', ');
+    } else {
+      item.genres = newGenre.join(', ');
+    }
+    return item;
+  });
+}
+
 // в зависимости от viewport оствляет необходимое количество элементов
 function changeNumberOfItem(filmsData) {
   let newFilmsData = [];
@@ -52,14 +73,13 @@ function storageModal() {
   filmItemRef.forEach(data => {
     // берем id фильма
     let filmID = data.dataset.film;
-    
+
     // Вешаем на картинку слушателя, чтобы открывалась модалка
     data.addEventListener('click', modalHandler);
     data.addEventListener('dblclick', modalHandler);
 
     function modalHandler(event) {
       event.preventDefault();
-      
 
       fetch(
         `https://api.themoviedb.org/3/movie/${filmID}?api_key=bf08c0c07642287cbabe383c02818eb3`,
@@ -71,7 +91,7 @@ function storageModal() {
           filmCardRef.insertAdjacentHTML('beforeend', markup2);
 
           refs.movieModal.classList.remove('is-hidden');
-          refs.body.classList.add('modal-overflow')
+          refs.body.classList.add('modal-overflow');
 
           // додаємо роботу із localStorage
           // беремо посилання на кнопки
@@ -116,4 +136,9 @@ function storageModal() {
   });
 }
 
-export { changeGenreData, changeNumberOfItem, storageModal };
+export {
+  changeGenreData,
+  changeNumberOfItem,
+  storageModal,
+  changeGenreDataLibrary,
+};
