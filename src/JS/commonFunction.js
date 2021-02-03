@@ -74,9 +74,7 @@ function storageModal() {
 
           // додаємо роботу із localStorage
           // беремо посилання на кнопки
-          const addToWatchedBtnRef = document.querySelector(
-            '.js-add-to-watched',
-          );
+          const addToWatchedBtnRef = document.querySelector('.js-add-to-watched');
           const addToQueueBtnRef = document.querySelector('.js-add-to-queue');
 
           // отримуємо масиви фільмів "Watched" та "Queue" із localStorage
