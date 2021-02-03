@@ -24,7 +24,7 @@
         "email": "lettawetta@icloud.com"
     },
     {
-        "image": "./images/footer-modal-about-us/liliya-yarm.png",
+        "image": "./images/footer-modal-about-us/liliya.jpg",
         "name": "Liliia Yarmolova",
         "position": "Student",
         "email": "lyarmolova@ukr.net"
@@ -48,17 +48,18 @@
         "email": "stopinahelen@gmail.com"
     },
     {
+        "image": "./images/footer-modal-about-us/vv.jpg",
+        "name": "Volodymyr Vorona",
+        "position": "Student",
+        "email": "volodimir.vorona@gmail.com"
+    },
+    {
         "image": "./images/footer-modal-about-us/jo.png",
         "name": "Joanna Galdzinska",
         "position": "Student",
         "email": "jollipop11@gmail.com"
     },
-    {
-        "image": "./images/footer-modal-about-us/volodimir.png",
-        "name": "Volodymyr Vorona",
-        "position": "Student",
-        "email": "volodimir.vorona@gmail.com"
-    },
+    
     {
         "image": "./images/footer-modal-about-us/oleg-l.jpeg",
         "name": "Oleg Litvinenko",
