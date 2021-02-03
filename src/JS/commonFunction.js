@@ -55,6 +55,7 @@ function storageModal() {
     
     // Вешаем на картинку слушателя, чтобы открывалась модалка
     data.addEventListener('click', modalHandler);
+    data.addEventListener('dblclick', modalHandler);
 
     function modalHandler(event) {
       event.preventDefault();
