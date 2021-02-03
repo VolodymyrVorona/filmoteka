@@ -1,4 +1,11 @@
 import refs from "./refs"
+import members from './members.json';
+import teamMember from  '../templates/team-member.hbs';
+
+const memberMarkup = teamMember(members);
+
+const teamMemebers = document.querySelector('.our-team');
+teamMemebers.insertAdjacentHTML('beforeend', memberMarkup)
 
 const showMemebers = document.querySelector('.js-open-modal');
 showMemebers.addEventListener("click", footerModalHandler);

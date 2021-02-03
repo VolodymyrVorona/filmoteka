@@ -1,0 +1,69 @@
+[
+    {
+        "image": "./images/footer-modal-about-us/Teamlead.jpeg",
+        "name": "Vitalii Hromyk",
+        "position": "Team Leader",
+        "email": "hromykk@gmail.com"
+    },
+    {
+        "image": "./images/footer-modal-about-us/Scrum-master.jpeg",
+        "name": "Oleksandr Mykytiuk",
+        "position": "Scrum Master",
+        "email": "alexandermykytiuk@gmail.com"
+    },
+    {
+        "image": "./images/footer-modal-about-us/natalia-laz.jpeg",
+        "name": "Nataliia Lazorenko",
+        "position": "Student",
+        "email": "natalystruk@gmail.com"
+    },
+    {
+        "image": "./images/footer-modal-about-us/letta.jpeg",
+        "name": "Letta Savchenko",
+        "position": "Student",
+        "email": "lettawetta@icloud.com"
+    },
+    {
+        "image": "./images/footer-modal-about-us/liliya-yarm.png",
+        "name": "Liliia Yarmolova",
+        "position": "Student",
+        "email": "lyarmolova@ukr.net"
+    },
+    {
+        "image": "./images/footer-modal-about-us/yevheniia.jpeg",
+        "name": "Yevheniia Suska",
+        "position": "Student",
+        "email": "susskaya86@gmail.com"
+    },
+    {
+        "image": "./images/footer-modal-about-us/galina-pr.jpeg",
+        "name": "Halyna Pryn",
+        "position": "Student",
+        "email": "prynhalyna@gmail.com"
+    },
+    {
+        "image": "./images/footer-modal-about-us/elena-st.jpeg",
+        "name": "Helen Stepina",
+        "position": "Student",
+        "email": "stopinahelen@gmail.com"
+    },
+    {
+        "image": "./images/footer-modal-about-us/jo.png",
+        "name": "Joanna Galdzinska",
+        "position": "Student",
+        "email": "jollipop11@gmail.com"
+    },
+    {
+        "image": "./images/footer-modal-about-us/volodimir.png",
+        "name": "Volodymyr Vorona",
+        "position": "Student",
+        "email": "volodimir.vorona@gmail.com"
+    },
+    {
+        "image": "./images/footer-modal-about-us/oleg-l.jpeg",
+        "name": "Oleg Litvinenko",
+        "position": "Student",
+        "email": "litwinenkooleg371@gmail.com"
+    }
+
+]
