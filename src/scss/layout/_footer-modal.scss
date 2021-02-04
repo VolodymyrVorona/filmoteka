@@ -34,6 +34,8 @@
   
   .team-member img {
     width: 100px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 50%;
   }
       
@@ -44,6 +46,7 @@
       top: 50%;
             transform: translate(-50%, -50%);
       height: 95vh;
+      width: 80vw;
       padding: 10px;
       box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
       0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -93,6 +96,7 @@
 
   .footer-close-button {
     position: absolute;
+    z-index: 100;
     top: 15px;
     right: 15px;
     display: block;
@@ -101,7 +105,7 @@
         
     padding: 0;
     background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid $text-modal-window-color;
     border-radius:  50%;
     cursor: pointer;
     @media screen and (min-width: 768px) {
@@ -112,8 +116,8 @@
   }
 
   @media screen and (min-width: 1024px) {
-    top: 40px;
-    right: 40px;
+    top: 50px;
+    right: 50px;
   }
 
   .close {
@@ -136,7 +140,7 @@
     content: ' ';
     height: 20px;
     width: 2px;
-    background-color: grey;
+    background-color: $text-footer-color;
     
 
   }

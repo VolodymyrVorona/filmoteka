@@ -3,6 +3,13 @@
   overflow: hidden;
 }
 
+.modal-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
 .movie-modal {
     position: fixed;
     top: 0;
@@ -66,6 +73,7 @@
 
 .close-button {
     position: absolute;
+    z-index: 100;
     top: 15px;
     right: 15px;
     display: block;
@@ -74,7 +82,7 @@
         
     padding: 0;
     background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.1);
+    border: 1px solid $text-modal-window-color;
     border-radius:  50%;
     cursor: pointer;
     @media screen and (min-width: 768px) {
@@ -85,8 +93,8 @@
   }
 
   @media screen and (min-width: 1024px) {
-    top: 40px;
-    right: 40px;
+    top: 50px;
+    right: 50px;
   }
   }
 
@@ -110,9 +118,7 @@
     content: ' ';
     height: 20px;
     width: 2px;
-    background-color: grey;
-    
-
+    background-color: $text-footer-color;
   }
   .close:before {
     transform: rotate(45deg);
