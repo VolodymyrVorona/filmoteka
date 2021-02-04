@@ -34,6 +34,8 @@
   
   .team-member img {
     width: 100px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 50%;
   }
       
@@ -94,8 +96,9 @@
 
   .footer-close-button {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    z-index: 100;
+    top: 15px;
+    right: 15px;
     display: block;
      width: 35px;
     height: 35px;
