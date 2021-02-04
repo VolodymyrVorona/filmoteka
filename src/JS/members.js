@@ -1,5 +1,5 @@
 import refs from "./refs"
-import members from './members.json';
+import members from '../components/members.json';
 import teamMember from  '../templates/team-member.hbs';
 
 const memberMarkup = teamMember(members);
@@ -12,8 +12,6 @@ showMemebers.addEventListener("click", footerModalHandler);
 
 function footerModalHandler(event) {
     event.preventDefault();
-
-    console.log('open!');
 
     const footerModal = document.querySelector('.footer-modal');
     footerModal.classList.remove('is_hidden');

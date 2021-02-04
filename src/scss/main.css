@@ -566,7 +566,7 @@ div.buttons-wrapper.is-hidden {
   height: 35px;
   padding: 0;
   background-color: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid #8c8c8c;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -582,8 +582,8 @@ div.buttons-wrapper.is-hidden {
 
 @media screen and (min-width: 1024px) {
   .close-button {
-    top: 40px;
-    right: 40px;
+    top: 50px;
+    right: 50px;
   }
 }
 
@@ -612,7 +612,7 @@ div.buttons-wrapper.is-hidden {
   content: ' ';
   height: 20px;
   width: 2px;
-  background-color: grey;
+  background-color: #545454;
 }
 
 .close:before {
@@ -1623,7 +1623,7 @@ ul {
   height: 35px;
   padding: 0;
   background-color: #fff;
-  border: 1px solid #ff6b08;
+  border: 1px solid #8c8c8c;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -1639,8 +1639,8 @@ ul {
 
 @media screen and (min-width: 1024px) {
   .footer-close-button {
-    top: 40px;
-    right: 40px;
+    top: 50px;
+    right: 50px;
   }
 }
 
@@ -1669,7 +1669,7 @@ ul {
   content: ' ';
   height: 20px;
   width: 2px;
-  background-color: #ff6b08;
+  background-color: #545454;
 }
 
 .footer-close-button .close:before {
