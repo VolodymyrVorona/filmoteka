@@ -5,6 +5,7 @@ import modalMovieTemplate from '../templates/fullDescriptionMovie.hbs';
 import getMovieFromSaved from './getMovieFromSaved';
 import addMovieToSaved from './addMovieToSaved';
 
+const debounce = require('lodash.debounce');
 // изменяет  жанр  и дату
 function changeGenreData(filmsData) {
   filmsData.map(item => {
@@ -78,7 +79,7 @@ function storageModal() {
     let filmID = data.dataset.film;
 
     // Вешаем на картинку слушателя, чтобы открывалась модалка
-    data.addEventListener('click', modalHandler);
+    data.addEventListener('click', debounce(modalHandler, 600));
     data.addEventListener('dblclick', modalHandler);
 
     function modalHandler(event) {
