@@ -7,18 +7,13 @@ a:focus {
   background-color: transparent;
   border: none;
 }
+.hide {
+  display: none;
+}
+
 .container-sign_in,
 .container-sign_up {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-
-  background-color: rgba(0, 0, 0, 0.8);
-  z-index: 1000;
-  transition: opacity 400ms ease-in;
-  display: block;
+  opacity: 1;
 }
 
 .tab {
@@ -31,12 +26,14 @@ a:focus {
   width: 350px;
   height: 350px;
 
+  z-index: 1000;
+
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 }
-.is-hidden {
-  display: none;
+.is-unactive {
+  opacity: 0;
 }
 .tab .tab-content {
   padding: 5px 0 0 0;
