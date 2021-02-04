@@ -1,18 +1,13 @@
-import film from '../templates/trendMovieTemplate.hbs';
 import filmLibrary from '../templates/libraryMovieTemplate.hbs';
 import refs from './refs';
 import getMovieFromSaved from './getMovieFromSaved';
-import { Spinner } from 'spin.js';
-import opts from './spinner'; // опції спінера
+import mainPageRender from './mainPageRender';
 import setItemsPerPage from './setItemsPerPage';
 import createPagination from './createPagination';
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.min.css';
 
-import {
-  changeGenreData,
-  changeNumberOfItem,
-  storageModal,
-  changeGenreDataLibrary,
-} from './commonFunction';
+import { storageModal, changeGenreDataLibrary } from './commonFunction';
 
 refs.linkHome.addEventListener('click', onHome);
 refs.linkLogo.addEventListener('click', onHome);
@@ -21,33 +16,31 @@ refs.linkWatched.addEventListener('click', onLibrary);
 refs.linkQueue.addEventListener('click', onLibrary);
 
 // вызывает сразу в разметку - получается вместе 18 штук (пока закоментила -нужно будет убрать)
-// onHome();
+// mainPageRender();
 
 function onHome(e) {
   e.preventDefault();
-  var spinner = new Spinner(opts).spin(refs.targetSpinner);
   hidenLibrary();
   refs.movieRef.innerHTML = '';
 
-  fetch(
-    'https://api.themoviedb.org/3/trending/movie/day?api_key=bf08c0c07642287cbabe383c02818eb3',
-  )
-    .then(response => response.json())
-    .then(data => data.results)
-    .then(movies => {
-      // изменяет  жанр  и дату
-      changeGenreData(movies);
+  mainPageRender();
+  // разметка пагинации
+  const container = document.getElementById('tui-pagination-container');
 
-      // в зависимости от viewport оствляет необходимое количество элементов
-      let newFilmCount = changeNumberOfItem(movies);
+  const { visiblePaginationPages } = setItemsPerPage();
 
-      // делаем разметку (вставляем шаблон)
-      const markup = film(newFilmCount);
-      refs.movies.insertAdjacentHTML('beforeend', markup);
+  // свойства
+  const pagination = new Pagination(container, {
+    totalItems: 20000,
+    itemsPerPage: 20,
+    visiblePages: visiblePaginationPages,
+  });
 
-      spinner.stop();
-      storageModal();
-    });
+  // при клике на номер страницы - рендерится разметка
+  pagination.on('afterMove', function (eventData) {
+    // const apiKey = 'bf08c0c07642287cbabe383c02818eb3';
+    mainPageRender();
+  });
 }
 
 // callback при клику на my-library and Watched

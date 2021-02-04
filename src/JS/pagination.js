@@ -6,8 +6,11 @@ import 'tui-pagination/dist/tui-pagination.min.css';
 import refs from './refs';
 // плагин спинера
 import { Spinner } from 'spin.js';
-// // импорт опций спинеера
+// импорт опций спинера
 import opts from './spinner';
+import setItemsPerPage from './setItemsPerPage';
+import createPagination from './createPagination';
+
 // импорт общих функций
 import {
   changeGenreData,
@@ -15,21 +18,16 @@ import {
   storageModal,
 } from './commonFunction';
 
-// // разметка пагинации
-var container = document.getElementById('tui-pagination-container');
+// разметка пагинации
+const container = document.getElementById('tui-pagination-container');
 
-// // разметка кнопок для пагинации в зависимости от ширины дисплея.
-let setVisiblePage = 0;
-if (document.documentElement.clientWidth < 768) {
-  setVisiblePage = 3;
-} else {
-  setVisiblePage = 8;
-}
-// // свойства
-var pagination = new Pagination(container, {
+const { visiblePaginationPages } = setItemsPerPage();
+
+// свойства
+const pagination = new Pagination(container, {
   totalItems: 20000,
   itemsPerPage: 20,
-  visiblePages: setVisiblePage,
+  visiblePages: visiblePaginationPages,
 });
 
 // при клике на номер страницы - рендерится разметка
