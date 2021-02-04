@@ -34,6 +34,8 @@
   
   .team-member img {
     width: 100px;
+    height: 100px;
+    object-fit: cover;
     border-radius: 50%;
   }
       
@@ -94,15 +96,16 @@
 
   .footer-close-button {
     position: absolute;
-    top: 5px;
-    right: 5px;
+    z-index: 100;
+    top: 15px;
+    right: 15px;
     display: block;
      width: 35px;
     height: 35px;
         
     padding: 0;
     background-color: #fff;
-    border: 1px solid $accent-color;
+    border: 1px solid $text-modal-window-color;
     border-radius:  50%;
     cursor: pointer;
     @media screen and (min-width: 768px) {
@@ -113,8 +116,8 @@
   }
 
   @media screen and (min-width: 1024px) {
-    top: 40px;
-    right: 40px;
+    top: 50px;
+    right: 50px;
   }
 
   .close {
@@ -137,7 +140,7 @@
     content: ' ';
     height: 20px;
     width: 2px;
-    background-color: $accent-color;
+    background-color: $text-footer-color;
     
 
   }

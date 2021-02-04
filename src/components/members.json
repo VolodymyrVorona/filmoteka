@@ -1,70 +1,69 @@
 [
     {
-        "image": "./images/footer-modal-about-us/Teamlead.jpeg",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U01A098M153-98f9313c4295-512",
         "name": "Vitalii Hromyk",
         "position": "Team Leader",
         "email": "hromykk@gmail.com"
     },
     {
-        "image": "./images/footer-modal-about-us/Scrum-master.jpeg",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U019P5JEHMM-86d6ce050614-512",
         "name": "Oleksandr Mykytiuk",
         "position": "Scrum Master",
         "email": "alexandermykytiuk@gmail.com"
     },
     {
-        "image": "./images/footer-modal-about-us/natalia-laz.jpeg",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U01A3BRA1C2-d16afcf1c24e-512",
         "name": "Nataliia Lazorenko",
         "position": "Student",
         "email": "natalystruk@gmail.com"
     },
     {
-        "image": "./images/footer-modal-about-us/letta.jpeg",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U019WKPLNUE-612df3bb84ff-512",
         "name": "Letta Savchenko",
         "position": "Student",
         "email": "lettawetta@icloud.com"
     },
     {
-        "image": "./images/footer-modal-about-us/liliya.jpg",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U019WKP3NVC-gf11ffee4bda-512",
         "name": "Liliia Yarmolova",
         "position": "Student",
         "email": "lyarmolova@ukr.net"
     },
     {
-        "image": "./images/footer-modal-about-us/yevheniia.jpeg",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U01AT713S8Y-2301e1763300-512",
         "name": "Yevheniia Suska",
         "position": "Student",
         "email": "susskaya86@gmail.com"
     },
     {
-        "image": "./images/footer-modal-about-us/galina-pr.jpeg",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U019NK9NV63-92c5b48df270-512",
         "name": "Halyna Pryn",
         "position": "Student",
         "email": "prynhalyna@gmail.com"
     },
     {
-        "image": "./images/footer-modal-about-us/elena-st.jpeg",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U01A0B0UUER-d28daccf8b6a-512",
         "name": "Helen Stepina",
         "position": "Student",
         "email": "stopinahelen@gmail.com"
     },
     {
-        "image": "./images/footer-modal-about-us/vv.jpg",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U01A9H8TQNQ-c5791ee3a6f3-512",
         "name": "Volodymyr Vorona",
         "position": "Student",
         "email": "volodimir.vorona@gmail.com"
     },
     {
-        "image": "./images/footer-modal-about-us/jo.png",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U01AT714JU8-e3bdf0952ec3-512",
         "name": "Joanna Galdzinska",
         "position": "Student",
         "email": "jollipop11@gmail.com"
     },
     
     {
-        "image": "./images/footer-modal-about-us/oleg-l.jpeg",
+        "image": "https://ca.slack-edge.com/T01AD58HHH7-U01AG0RAR4H-d1d737de14fb-512",
         "name": "Oleg Litvinenko",
         "position": "Student",
         "email": "litwinenkooleg371@gmail.com"
     }
-
 ]

@@ -1,7 +1,11 @@
+import Pagination from 'tui-pagination';
+import 'tui-pagination/dist/tui-pagination.css';
+
 import refs from './refs';
 
 import fetchMovies from './fetchByKeyWords';
 import searchResultsMarkup from './searchResultsMarkup';
+import keyWordPagination from './keyWordPagination';
 
 // плагин спинера
 import { Spinner } from 'spin.js';
@@ -11,8 +15,9 @@ import opts from './spinner';
 // --------слушатель на форму поиска-------
 refs.linkInput.addEventListener('submit', event => {
   event.preventDefault();
+  // refs.divPagination.innerHTML = '';
   // запуск спиннера
-  var spinner = new Spinner(opts).spin(refs.targetSpinner);
+  const spinner = new Spinner(opts).spin(refs.targetSpinner);
   const form = event.currentTarget;
 
   const inputValue = form.elements.query.value;
@@ -28,7 +33,7 @@ refs.linkInput.addEventListener('submit', event => {
         // якщо не ввели дані в input, отримуємо помилку, виводимо її текст
         refs.warningString.classList.remove('is-hidden');
         refs.warningString.textContent = data.errors;
-      } else if (data.length === 0) {
+      } else if (data.results.length === 0) {
         // якщо ввели неіснуюче слово, від бекенду отримужмо порожній масив. Виводимо текст із макету
         refs.warningString.classList.remove('is-hidden');
         refs.warningString.textContent =
@@ -37,9 +42,12 @@ refs.linkInput.addEventListener('submit', event => {
         // якщо отримали коректні результати, здійснюємо рендер розмітки
         refs.warningString.classList.add('is-hidden');
         refs.movieRef.innerHTML = '';
-        searchResultsMarkup(data);
+        searchResultsMarkup(data.results);
       }
+
+      return data;
     })
+    .then(data => keyWordPagination(data, inputValue))
     .catch(error => console.log(error))
     .finally(() => {
       spinner.stop();
