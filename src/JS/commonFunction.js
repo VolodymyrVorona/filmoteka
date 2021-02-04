@@ -30,18 +30,21 @@ function changeGenreData(filmsData) {
 function changeGenreDataLibrary(filmsData) {
   filmsData.map(item => {
     let newGenre = [];
-    item.genres.forEach(({ id }) => {
-      const found = genreID.find(item => item.id === id);
-      newGenre.push(found.name);
-    });
-    if (item.release_date) {
-      item.release_date = item.release_date.slice(0, 4);
-    }
-    if (newGenre.length >= 4) {
-      const manyGenres = newGenre.slice(0, 3);
-      item.genres = manyGenres.join(', ');
-    } else {
-      item.genres = newGenre.join(', ');
+
+    if (item.genres[0].id) {
+      item.genres.forEach(({ id }) => {
+        const found = genreID.find(item => item.id === id);
+        newGenre.push(found.name);
+      });
+      if (item.release_date) {
+        item.release_date = item.release_date.slice(0, 4);
+      }
+      if (newGenre.length >= 4) {
+        const manyGenres = newGenre.slice(0, 3);
+        item.genres = manyGenres.join(', ');
+      } else {
+        item.genres = newGenre.join(', ');
+      }
     }
     return item;
   });
@@ -95,7 +98,9 @@ function storageModal() {
 
           // додаємо роботу із localStorage
           // беремо посилання на кнопки
-          const addToWatchedBtnRef = document.querySelector('.js-add-to-watched');
+          const addToWatchedBtnRef = document.querySelector(
+            '.js-add-to-watched',
+          );
           const addToQueueBtnRef = document.querySelector('.js-add-to-queue');
 
           // отримуємо масиви фільмів "Watched" та "Queue" із localStorage
