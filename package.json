@@ -52,6 +52,7 @@
     "core-js": "^3.8.3",
     "firebase": "^8.2.4",
     "handlebars": "^4.7.6",
+    "lodash.debounce": "^4.0.8",
     "spin.js": "^4.1.0",
     "tui-pagination": "^3.4.0"
   }

@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Filmoteka</title>
+     <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+  <style>
+    .notie-container {
+      box-shadow: none;
+    }
+  </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
@@ -111,7 +117,10 @@
     </header>
     <main>
           <div class="tab container-sign_in is-unactive ">
+            <button type="button" class="sign_fotm_btn siModalClose"></button>
             <div class="tab-content tabs">
+              
+              </button>
               <div
                 role="tabpanel"
                 class="tab-pane fade "
@@ -139,7 +148,7 @@
                   <button class="modalSIbtn btn"> Login </button>
                   </div>
                   <div class="form-group forgot-pass">
-                    <button class="btn"> Forgot password</button></div>
+                    <button class="btn forgotPass"> Forgot password</button></div>
                 </form>
               </div>
             </div>
@@ -148,6 +157,7 @@
 
         <div class="container-sign_up is-unactive">
               <div role="tabpanel" class="tab" id="Section2">
+                <button type="button" class="sign_fotm_btn suModalClose"></button>
                 <h1 class="text">Get Started now</h1>
                 <form class="form-horizontal formUp-group">
                   <div class="form-group">
@@ -223,7 +233,6 @@
         <div class="film-card"></div>
       </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+     <script src="https://unpkg.com/notie"></script>
   </body>
 </html>

@@ -6,9 +6,25 @@ a:focus {
 .sign_btn {
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 .hide {
   display: none;
+}
+.sign_fotm_btn {
+  position: absolute;
+  z-index: 100;
+  top: 15px;
+  right: 15px;
+  display: block;
+  width: 35px;
+  height: 35px;
+
+  padding: 0;
+  background-color: #200122;
+
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .container-sign_in,
@@ -23,14 +39,23 @@ a:focus {
   position: fixed;
   border-radius: 20px;
 
-  width: 350px;
-  height: 350px;
+  width: 300px;
+  height: 300px;
 
   z-index: 1000;
 
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
+
+  @media screen and (min-width: 768px) {
+    width: 350px;
+    height: 350px;
+  }
+  @media screen and (min-width: 1024px) {
+    width: 350px;
+    height: 350px;
+  }
 }
 .is-unactive {
   opacity: 0;
@@ -116,6 +141,9 @@ a:focus {
   border-top: 1px solid #615f6c;
   margin: 0;
   text-align: center;
+}
+.btn {
+  cursor: pointer;
 }
 .form-horizontal .forgot-pass .btn {
   width: auto;

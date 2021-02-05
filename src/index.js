@@ -4,6 +4,7 @@ import './JS/mainPageMovie';
 
 import './JS/firebase';
 import './JS/authenticateUser';
+import './JS/forgottPas';
 import './JS/signIn_modal';
 
 import './JS/searchByKeywords';

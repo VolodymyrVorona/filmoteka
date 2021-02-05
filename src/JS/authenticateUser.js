@@ -7,17 +7,17 @@ const signUpForm = document.querySelector('.formUp-group');
 signInForm.addEventListener('submit', signInWithEmailPassword);
 signUpForm.addEventListener('submit', signUpWithEmailPassword);
 
-console.log(signInForm);
-console.log(signUpForm);
-
 function signInWithEmailPassword(event) {
   event.preventDefault();
   const email = document.querySelector('.signInemail').value;
   const password = document.querySelector('.signInpassword').value;
 
-  console.log(email, password);
-
   authFire.signInWithEmailAndPassword(email, password).catch(error => {
+    notie.alert({
+      type: 'error',
+      text: 'Ops,something went wrong!',
+      time: 2,
+    });
     console.log(error);
   });
 }
@@ -28,6 +28,11 @@ function signUpWithEmailPassword(event) {
   const password = document.querySelector('.sign_password').value;
 
   authFire.createUserWithEmailAndPassword(email, password).catch(error => {
+    notie.alert({
+      type: 'error',
+      text: 'Filled your email and password please!',
+      time: 2,
+    });
     console.log(error);
   });
 }
@@ -49,5 +54,6 @@ authFire.onAuthStateChanged(_user => {
 
 document.getElementById('btnLogOut').addEventListener('click', e => {
   authFire.signOut();
+  notie.alert({ type: 'success', text: 'You are Logged Out!', time: 2 });
   console.log('logged out');
 });
