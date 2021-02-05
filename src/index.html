@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Filmoteka</title>
+     <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
+  <style>
+    .notie-container {
+      box-shadow: none;
+    }
+  </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
@@ -83,6 +89,9 @@
           </a>
 
           <nav>
+            <button class="page__link  sign_btn signUp">Sign Up</button>
+             <button class="page__link sign_btn signIn">Sign In</button>
+             <button class="page__link sign_btn hide" id= "btnLogOut">Log Out</button>
             <a class="page__link active link nav-home" href="">Home</a>
             <a class="page__link link nav-library" href="">my library</a>
           </nav>
@@ -107,21 +116,23 @@
       </div>
     </header>
     <main>
-      <!-- <div class="container-sign_in is-hidden " id="sign_in">
-          <div class="tab ">
+          <div class="tab container-sign_in is-unactive ">
+            <button type="button" class="sign_fotm_btn siModalClose"></button>
             <div class="tab-content tabs">
+              
+              </button>
               <div
                 role="tabpanel"
                 class="tab-pane fade "
                 id="Section1"
               >
                 <h1 class="text">Sign In</h1>
-                <form class="form-horizontal">
+                <form class="form-horizontal formIn-group">
                   <div class="form-group">
                     <label for="exampleInputEmail1">Email</label>
                     <input
-                      type="email"
-                      class="form-control"
+                      type="textEmailAddress"
+                      class="form-control signInemail"
                       id="email"
                     />
                   </div>
@@ -129,49 +140,48 @@
                     <label for="exampleInputPassword1">Password</label>
                     <input
                       type="password"
-                      class="form-control"
+                      class="form-control signInpassword"
                       id="password"
                     />
                   </div>
                   <div class="form-group">
-                  <button class="signUpbtn btn" >  Login </button>
+                  <button class="modalSIbtn btn"> Login </button>
                   </div>
                   <div class="form-group forgot-pass">
-                    <button class="btn"> Forgot password</button></div>
+                    <button class="btn forgotPass"> Forgot password</button></div>
                 </form>
               </div>
             </div>
           </div>
         </div>
-      <div class="container-sign_up is-hidden " id="sign_up">
+
+        <div class="container-sign_up is-unactive">
               <div role="tabpanel" class="tab" id="Section2">
+                <button type="button" class="sign_fotm_btn suModalClose"></button>
                 <h1 class="text">Get Started now</h1>
-                <form class="form-horizontal">
+                <form class="form-horizontal formUp-group">
                   <div class="form-group">
                     <label for="email">Email address</label>
                     <input
                       type="textEmailAddress"
-                      class="form-control"
-                      id="email"
+                      class="form-control sign_email"
+                      id="emailSU"
                     />
                   </div>
                   <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
                     <input
-                      type="textPassword"
-                      class="form-control"
-                      id="password"
+                      type="Password"
+                      class="form-control sign_password"
+                      id="passwordSU"
                     />
                   </div>
                   <div class="form-group">
-                   <button class="signUpbtn btn" id = "signUpBtn"> Sign up </button>
+                   <button class="modalSUbtn btn" id = "signUpBtn"> Sign up </button>
                   </div>
                 </form>
               </div>
             </div>
-          </div>
-        </div>
-      </div> -->
       <div class="container">
         <!-- cпиннер -->
         <div id="spinner"></div>
@@ -223,7 +233,6 @@
         <div class="film-card"></div>
       </div>
     </div>
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+     <script src="https://unpkg.com/notie"></script>
   </body>
 </html>
