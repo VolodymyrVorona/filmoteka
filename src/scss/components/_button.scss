@@ -18,6 +18,7 @@ div.buttons-wrapper {
   text-transform: uppercase;
   color: $text-dark-theme-color;
   background-color: $button-main-background-color;
+
   &.noactive {
     border: 1px solid #ffffff;
     background-color: transparent;

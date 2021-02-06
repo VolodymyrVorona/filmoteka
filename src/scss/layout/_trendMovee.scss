@@ -79,3 +79,41 @@
   border-radius: 5px;
   transform: scale(1.06);
 }
+
+.info-message {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.4;
+
+  text-transform: uppercase;
+  text-align: center;
+
+  border-radius: 5px;
+  border: transparent;
+
+  background-color: transparent;
+  color: rgba(255, 107, 1, 0.5);
+
+  @media screen and (min-width: 360px) {
+    font-size: 26px;
+  }
+
+  @media screen and (min-width: 768px) {
+    font-size: 30px;
+  }
+
+  @media screen and (min-width: 1024px) {
+    font-size: 36px;
+  }
+}
+
+.trend-movie.show-message {
+  justify-content: center;
+  align-items: flex-end;
+
+  padding: 100px 20px 0px 20px;
+
+  @media screen and (min-width: 1024px) {
+    padding: 130px 50px 0px 50px;
+  }
+}

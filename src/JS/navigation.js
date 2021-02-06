@@ -41,8 +41,6 @@ function onLibrary(e) {
     key = refs.queueBtn.innerHTML.toLowerCase();
     refs.watchedBtn.classList.add('noactive'); // робить кнопку неактивною
     refs.queueBtn.classList.remove('noactive'); // робить кнопку активною
-
-    // refs.queueBtn.textContent = `clear ${key}`;
   }
 
   const movies = getMovieFromSaved(key); // записує дані з Localstoradge у змінну
@@ -72,15 +70,6 @@ function onLibrary(e) {
     libraryPageRender(movies, firstIndex, lastIndex);
   }
 }
-
-// callback для рендеру сторінки бібліотеки
-// function libraryPageRender(movies, firstIndex, lastIndex) {
-//   refs.moviesContainer.innerHTML = ''; // очищує сторінку від фільмів
-//   const newList = movies.slice(firstIndex, lastIndex); // вирізає із масиву даних потрібну к-сть елементів
-//   changeGenre(newList); // вибирає назви жанрів
-//   changeData(newList); // обрізає дату (залишає тільки рік)
-//   renderMarkup(newList, filmLibrary, refs.moviesContainer); // рендерить розмітку по шаблону
-// }
 
 function hidenLibrary() {
   refs.myLibrary.classList.remove('active');
