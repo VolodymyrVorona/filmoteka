@@ -3,14 +3,17 @@ a:focus {
   outline: none;
   text-decoration: none;
 }
+
+.scroll-hidden {
+  overflow: hidden;
+}
+
 .sign_btn {
   background-color: transparent;
   border: none;
   cursor: pointer;
 }
-.hide {
-  display: none;
-}
+
 .sign_fotm_btn {
   position: absolute;
   z-index: 100;
@@ -29,43 +32,72 @@ a:focus {
 
 .container-sign_in,
 .container-sign_up {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
   opacity: 1;
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  overflow-y: hidden;
+  scroll-behavior: unset;
+}
+
+.backdrop-sign,
+.backdrop-sign-up {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.8);
+
+  overflow-y: hidden;
 }
 
 .tab {
   background: -webkit-linear-gradient(to bottom, #6f0000, #200122);
   background: linear-gradient(to bottom, #6f0000, #200122);
   padding: 40px 50px;
-  position: fixed;
+  position: absolute;
   border-radius: 20px;
 
   width: 300px;
   height: 300px;
 
-  z-index: 1000;
+  z-index: 100000;
 
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
 
+  overflow-y: hidden;
+
   @media screen and (min-width: 768px) {
     width: 350px;
     height: 350px;
   }
+
   @media screen and (min-width: 1024px) {
     width: 350px;
     height: 350px;
   }
 }
+
 .is-unactive {
   opacity: 0;
+  pointer-events: none;
 }
+
 .tab .tab-content {
   padding: 5px 0 0 0;
   background: transparent;
   z-index: 1;
   position: relative;
 }
+
 .text {
   text-align: center;
   font-size: 20px;
@@ -77,6 +109,7 @@ a:focus {
   text-transform: capitalize;
   margin-bottom: 10px;
 }
+
 .tabpanel .text {
   margin-bottom: 5px;
 }
@@ -85,6 +118,7 @@ a:focus {
   margin: 0 0 15px 0;
   position: relative;
 }
+
 .form-horizontal .form-control {
   width: 100%;
   height: 40px;
@@ -98,10 +132,12 @@ a:focus {
   color: #fff;
   transition: all 0.3s ease 0s;
 }
+
 .form-horizontal .form-control:focus {
   box-shadow: none;
   outline: 0 none;
 }
+
 .form-horizontal .form-group label {
   padding: 0 20px;
   color: #7f8291;
@@ -119,6 +155,7 @@ a:focus {
   padding-top: 5px;
   text-transform: capitalize;
 }
+
 .form-horizontal .btn {
   width: 100%;
   background: #eec111;
@@ -131,20 +168,24 @@ a:focus {
   text-transform: uppercase;
   margin: 20px 0 10px 0;
 }
+
 .form-horizontal .btn:focus {
   background: #eec111;
   color: #fff;
   outline: none;
   box-shadow: none;
 }
+
 .form-horizontal .forgot-pass {
   border-top: 1px solid #615f6c;
   margin: 0;
   text-align: center;
 }
+
 .btn {
   cursor: pointer;
 }
+
 .form-horizontal .forgot-pass .btn {
   width: auto;
   background: transparent;
@@ -153,11 +194,17 @@ a:focus {
   text-transform: capitalize;
   transition: all 0.3s ease 0s;
 }
+
 .form-horizontal .forgot-pass .btn:hover {
   color: #eec111;
 }
+
 @media only screen and (max-width: 479px) {
   .tab {
     padding: 40px 20px;
   }
+}
+
+.hide {
+  display: none;
 }

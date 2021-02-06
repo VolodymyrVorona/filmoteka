@@ -1,11 +1,10 @@
 import authFire from './firebase';
 
 const forgotPass = document.querySelector('.forgotPass');
-
 forgotPass.addEventListener('click', sendPasswordReset);
 
 function sendPasswordReset() {
-  const email = document.querySelector('.sign_email').value;
+  const email = document.querySelector('.signInemail').value;
   authFire
     .sendPasswordResetEmail(email)
     .then(() => {
