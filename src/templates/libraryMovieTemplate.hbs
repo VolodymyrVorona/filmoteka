@@ -1,28 +1,28 @@
 {{#each this}}
 <li class="trend-film-item list" data-film={{id}}>
-    {{#if poster_path}}
-    <img class="trend-film-image" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}"
-         loading="lazy">
-        {{else}}
-        <img  class="trend-film-image" src="https://www.deckchaircinema.com/template_1/img/default-movie-portrait.jpg" alt="Нет фото"
-        loading="lazy">
-{{/if}}
-    <h2 class="trend-film-name"> {{original_title}}</h2>
-    <div class="trend-film-genre-data-vote">
-        <ul class="trend-film-genre">
-          {{#if genres}}
-            <li class="genre-item">{{genres}}</li>
-             {{else}}
-              <li class="genre-item">Underfined</li>
-            {{/if}}
-        </ul>
-        <span class="trend-film-line"> | </span>
-        {{#if release_date}}
-        <span class="trend-film-data"> {{release_date}}</span>
-         {{else}}
-         <span class="trend-film-data">NO DATE</span>
-        {{/if}}
-       <span class="trend-film-vote">{{vote_average}}</span>
-    </div>
+  {{#if poster_path}}
+  <img class="trend-film-image" src="https://image.tmdb.org/t/p/w500{{poster_path}}" alt="{{original_title}}"
+    loading="lazy">
+  {{else}}
+  <img class="trend-film-image" src="https://www.deckchaircinema.com/template_1/img/default-movie-portrait.jpg"
+    alt="No foto" loading="lazy">
+  {{/if}}
+  <h2 class="trend-film-name"> {{original_title}}</h2>
+  <div class="trend-film-genre-data-vote">
+    <ul class="trend-film-genre">
+      {{#if genres}}
+      <li class="genre-item">{{genres}}</li>
+      {{else}}
+      <li class="genre-item">Indefinite</li>
+      {{/if}}
+    </ul>
+    <span class="trend-film-line"> | </span>
+    {{#if release_date}}
+    <span class="trend-film-data"> {{release_date}}</span>
+    {{else}}
+    <span class="trend-film-data">NO DATE</span>
+    {{/if}}
+    <span class="trend-film-vote">{{vote_average}}</span>
+  </div>
 </li>
 {{/each}}

@@ -5,12 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Filmoteka</title>
-     <link rel="stylesheet" type="text/css" href="https://unpkg.com/notie/dist/notie.min.css">
-  <style>
-    .notie-container {
-      box-shadow: none;
-    }
-  </style>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://unpkg.com/notie/dist/notie.min.css"
+    />
+    <style>
+      .notie-container {
+        box-shadow: none;
+      }
+    </style>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap"
       rel="stylesheet"
@@ -20,86 +24,30 @@
     <header class="header" id="header">
       <div class="container">
         <div class="menu__wrapper">
-          <a href="#" class="logo link"
-            ><svg
+          <a href="#" class="logo link">
+            <img
+              src="./images/film.svg"
+              alt="logotipe"
               width="24"
               height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M19.82 2H4.18C2.97602 2 2 2.97602 2 4.18V19.82C2 21.024 2.97602 22 4.18 22H19.82C21.024 22 22 21.024 22 19.82V4.18C22 2.97602 21.024 2 19.82 2Z"
-                stroke="#818181"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M7 2V22"
-                stroke="#818181"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M17 2V22"
-                stroke="#818181"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2 12H22"
-                stroke="#818181"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2 7H7"
-                stroke="#818181"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M2 17H7"
-                stroke="#818181"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M17 17H22"
-                stroke="#818181"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path
-                d="M17 7H22"
-                stroke="#818181"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+            />
             <span class="logo__text">Filmoteka</span>
           </a>
 
           <nav>
-            <button class="page__link  sign_btn signUp">Sign Up</button>
-             <button class="page__link sign_btn signIn">Sign In</button>
-             <button class="page__link sign_btn hide" id= "btnLogOut">Log Out</button>
+            <button class="page__link sign_btn signUp">Sign Up</button>
+            <button class="page__link sign_btn signIn">Sign In</button>
+            <button class="page__link sign_btn hide" id="btnLogOut">
+              Log Out
+            </button>
             <a class="page__link active link nav-home" href="">Home</a>
-            <a class="page__link link nav-library" href="">my library</a>
+            <a class="page__link link nav-library hide" href="">my library</a>
           </nav>
         </div>
 
         <form class="input__wrapper">
           <input
-            class="search__input js-search-form"
+            class="search__input js-input"
             type="text"
             name="query"
             id="search-input"
@@ -116,72 +64,71 @@
       </div>
     </header>
     <main>
-          <div class="tab container-sign_in is-unactive ">
+      <div class="container-sign_in is-unactive">
+        <div class="backdrop-sign">
+          <div role="tabpanel" class="tab" id="Section1">
             <button type="button" class="sign_fotm_btn siModalClose"></button>
-            <div class="tab-content tabs">
-              
-              </button>
-              <div
-                role="tabpanel"
-                class="tab-pane fade "
-                id="Section1"
-              >
-                <h1 class="text">Sign In</h1>
-                <form class="form-horizontal formIn-group">
-                  <div class="form-group">
-                    <label for="exampleInputEmail1">Email</label>
-                    <input
-                      type="textEmailAddress"
-                      class="form-control signInemail"
-                      id="email"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input
-                      type="password"
-                      class="form-control signInpassword"
-                      id="password"
-                    />
-                  </div>
-                  <div class="form-group">
-                  <button class="modalSIbtn btn"> Login </button>
-                  </div>
-                  <div class="form-group forgot-pass">
-                    <button class="btn forgotPass"> Forgot password</button></div>
-                </form>
-              </div>
+
+            <div role="tabpanel" class="tab-pane fade" id="Section1">
+              <h1 class="text">Sign In</h1>
+              <form class="form-horizontal formIn-group">
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input
+                    type="text"
+                    class="form-control signInemail cleanInput"
+                    id="email"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Password</label>
+                  <input
+                    type="password"
+                    class="form-control signInpassword cleanInput"
+                    id="password"
+                  />
+                </div>
+                <div class="form-group">
+                  <button class="modalSIbtn btn">Login</button>
+                </div>
+                <div class="form-group forgot-pass">
+                  <button class="btn forgotPass">Forgot password</button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="container-sign_up is-unactive">
-              <div role="tabpanel" class="tab" id="Section2">
-                <button type="button" class="sign_fotm_btn suModalClose"></button>
-                <h1 class="text">Get Started now</h1>
-                <form class="form-horizontal formUp-group">
-                  <div class="form-group">
-                    <label for="email">Email address</label>
-                    <input
-                      type="textEmailAddress"
-                      class="form-control sign_email"
-                      id="emailSU"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input
-                      type="Password"
-                      class="form-control sign_password"
-                      id="passwordSU"
-                    />
-                  </div>
-                  <div class="form-group">
-                   <button class="modalSUbtn btn" id = "signUpBtn"> Sign up </button>
-                  </div>
-                </form>
+      <div class="backdrop-sign-up is-unactive">
+        <div class="container-sign_up">
+          <div role="tabpanel" class="tab" id="Section2">
+            <button type="button" class="sign_fotm_btn suModalClose"></button>
+            <h1 class="text">Get Started now</h1>
+            <form class="form-horizontal formUp-group">
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input
+                  type="textEmailAddress"
+                  class="form-control sign_email"
+                  id="emailSU"
+                />
               </div>
-            </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input
+                  type="Password"
+                  class="form-control sign_password"
+                  id="passwordSU"
+                />
+              </div>
+              <div class="form-group">
+                <button class="modalSUbtn btn" id="signUpBtn">Sign up</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
       <div class="container">
         <!-- cпиннер -->
         <div id="spinner"></div>
@@ -209,10 +156,6 @@
     <div class="footer-modal is_hidden">
       <div class="footer-backdrop"></div>
 
-      <!-- <div class="our-team-modal">
-        <h2 class="team-title">OUR TEAM</h2>
-        <ul class="our-team"></ul> -->
-
       <div class="modal-content">
         <button type="button" class="footer-close-button">
           <div class="close"></div>
@@ -233,6 +176,6 @@
         <div class="film-card"></div>
       </div>
     </div>
-     <script src="https://unpkg.com/notie"></script>
+    <script src="https://unpkg.com/notie"></script>
   </body>
 </html>

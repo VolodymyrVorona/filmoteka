@@ -1,65 +1,60 @@
-import filmLibrary from '../templates/libraryMovieTemplate.hbs';
 import refs from './refs';
-import getMovieFromSaved from './getMovieFromSaved';
-import mainPageRender from './mainPageRender';
-import setItemsPerPage from './setItemsPerPage';
-import createPagination from './createPagination';
-import Pagination from 'tui-pagination';
+import getMovieFromSaved from './localStorage/getSavedItems';
+import { mainPageRender } from './render/mainPageRender';
+import setItemsPerPage from './transformData/setItemsPerPage';
+import createPagination from './pagination/createPagination';
 import 'tui-pagination/dist/tui-pagination.min.css';
+import onPagination from './pagination/mainPagePagination';
+import libraryPageRender from './render/libraryPageRender';
 
-import { storageModal, changeGenreDataLibrary } from './commonFunction';
+refs.homeLink.addEventListener('click', onHome);
+refs.logo.addEventListener('click', onHome);
+refs.myLibrary.addEventListener('click', onLibrary);
+refs.watchedBtn.addEventListener('click', onLibrary);
+refs.queueBtn.addEventListener('click', onLibrary);
 
-refs.linkHome.addEventListener('click', onHome);
-refs.linkLogo.addEventListener('click', onHome);
-refs.linkMyLibrary.addEventListener('click', onLibrary);
-refs.linkWatched.addEventListener('click', onLibrary);
-refs.linkQueue.addEventListener('click', onLibrary);
-
-// вызывает сразу в разметку - получается вместе 18 штук (пока закоментила -нужно будет убрать)
-// mainPageRender();
-
+// callback при кліку на Home і лого
 function onHome(e) {
   e.preventDefault();
   hidenLibrary();
-  refs.movieRef.innerHTML = '';
+
+  refs.moviesContainer.innerHTML = '';
 
   mainPageRender();
-  // разметка пагинации
-  const container = document.getElementById('tui-pagination-container');
-
   const { visiblePaginationPages } = setItemsPerPage();
-
-  // свойства
-  const pagination = new Pagination(container, {
-    totalItems: 20000,
-    itemsPerPage: 20,
-    visiblePages: visiblePaginationPages,
-  });
-
-  // при клике на номер страницы - рендерится разметка
-  pagination.on('afterMove', function (eventData) {
-    // const apiKey = 'bf08c0c07642287cbabe383c02818eb3';
-    mainPageRender();
-  });
+  createPagination(20000, 20, visiblePaginationPages, onPagination);
 }
 
-// callback при клику на my-library and Watched
+// callback при кліку на кнопки бібліотеки
 function onLibrary(e) {
   e.preventDefault();
   hidenHome();
 
+  refs.moviesContainer.classList.remove('show-message');
+
   let key;
-  if (e.target === refs.linkMyLibrary || e.target === refs.linkWatched) {
-    key = refs.linkWatched.innerHTML.toLowerCase();
-    refs.linkWatched.classList.remove('noactive'); // робить кнопку активною
-    refs.linkQueue.classList.add('noactive'); // робить кнопку неактивною
+  if (e.target === refs.myLibrary || e.target === refs.watchedBtn) {
+    key = refs.watchedBtn.innerHTML.toLowerCase();
+    refs.watchedBtn.classList.remove('noactive'); // робить кнопку активною
+    refs.queueBtn.classList.add('noactive'); // робить кнопку неактивною
   } else {
-    key = refs.linkQueue.innerHTML.toLowerCase();
-    refs.linkWatched.classList.add('noactive'); // робить кнопку неактивною
-    refs.linkQueue.classList.remove('noactive'); // робить кнопку активною
+    key = refs.queueBtn.innerHTML.toLowerCase();
+    refs.watchedBtn.classList.add('noactive'); // робить кнопку неактивною
+    refs.queueBtn.classList.remove('noactive'); // робить кнопку активною
+
+    // refs.queueBtn.textContent = `clear ${key}`;
   }
 
   const movies = getMovieFromSaved(key); // записує дані з Localstoradge у змінну
+
+  if (movies.length === 0) {
+    refs.moviesContainer.innerHTML = `<p class='info-message'>You don't have saved movies yet</p>`;
+    refs.moviesContainer.classList.add('show-message');
+    refs.divPagination.innerHTML = '';
+
+    return;
+  }
+
   const { moviesPerPage, visiblePaginationPages } = setItemsPerPage();
 
   libraryPageRender(movies, 0, moviesPerPage);
@@ -79,29 +74,26 @@ function onLibrary(e) {
 }
 
 // callback для рендеру сторінки бібліотеки
-function libraryPageRender(movies, firstIndex, lastIndex) {
-  refs.movieRef.innerHTML = ''; // очищує сторінку від фільмів
-
-  const newList = movies.slice(firstIndex, lastIndex); // вирізає із масиву даних потрібну к-сть елементів
-  changeGenreDataLibrary(newList); // вибирає назви жанрів та обрізає дату (залишає тільки рік)
-
-  const markup = filmLibrary(newList); // рендерить розмітку по шаблону
-  refs.movieRef.insertAdjacentHTML('beforeend', markup);
-  storageModal();
-}
+// function libraryPageRender(movies, firstIndex, lastIndex) {
+//   refs.moviesContainer.innerHTML = ''; // очищує сторінку від фільмів
+//   const newList = movies.slice(firstIndex, lastIndex); // вирізає із масиву даних потрібну к-сть елементів
+//   changeGenre(newList); // вибирає назви жанрів
+//   changeData(newList); // обрізає дату (залишає тільки рік)
+//   renderMarkup(newList, filmLibrary, refs.moviesContainer); // рендерить розмітку по шаблону
+// }
 
 function hidenLibrary() {
-  refs.linkMyLibrary.classList.remove('active');
-  refs.linkHome.classList.add('active');
-  refs.linkInput.classList.remove('is-hidden');
-  refs.linkButtons.classList.add('is-hidden');
-  refs.linkHeader.classList.remove('library');
+  refs.myLibrary.classList.remove('active');
+  refs.homeLink.classList.add('active');
+  refs.form.classList.remove('is-hidden');
+  refs.buttonsWrapper.classList.add('is-hidden');
+  refs.header.classList.remove('library');
 }
 
 function hidenHome() {
-  refs.linkMyLibrary.classList.add('active');
-  refs.linkHome.classList.remove('active');
-  refs.linkInput.classList.add('is-hidden');
-  refs.linkButtons.classList.remove('is-hidden');
-  refs.linkHeader.classList.add('library');
+  refs.myLibrary.classList.add('active');
+  refs.homeLink.classList.remove('active');
+  refs.form.classList.add('is-hidden');
+  refs.buttonsWrapper.classList.remove('is-hidden');
+  refs.header.classList.add('library');
 }

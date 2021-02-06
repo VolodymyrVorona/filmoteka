@@ -19,6 +19,7 @@
   height: 40px;
   line-height: 2;
 }
+
 #markup-plugin .tui-pagination .tui-page-btn {
   border: none;
   font-family: Roboto;
@@ -26,6 +27,7 @@
   font-style: normal;
   font-weight: 500;
 }
+
 .tui-pagination .tui-first,
 .tui-pagination .tui-last,
 .tui-pagination .tui-next,
@@ -40,4 +42,8 @@
 
 .turnoff {
   display: none;
+}
+
+.tui-pagination .tui-page-btn.tui-prev {
+  margin-right: 4px;
 }

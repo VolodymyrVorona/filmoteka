@@ -1,15 +1,12 @@
 import './scss/main.scss';
-import './JS/searchByKeywords';
-import './JS/mainPageMovie';
+import './js/navigation';
+import './js/searchByKeywords';
+import './js/modal/movieDetails';
 
-import './JS/firebase';
-import './JS/authenticateUser';
-import './JS/forgottPas';
-import './JS/signIn_modal';
+import './js/firebase/firebase';
+import './js/firebase/authenticateUser';
+import './js/firebase/forgottPas';
+import './js/firebase/signIn_modal';
 
-import './JS/searchByKeywords';
-
-import './JS/members.js';
-
-import './JS/pagination';
-import './JS/navigation';
+import './js/modal/teammates.js';
+import './js/pagination/mainPagePagination';

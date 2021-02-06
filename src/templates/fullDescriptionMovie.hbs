@@ -1,9 +1,9 @@
- {{#if poster_path}}
+{{#if poster_path}}
 <img class="movie-modal-image" src=https://image.tmdb.org/t/p/w500{{poster_path}} alt="{{original_title}}" width="426px"
     height="514px" loading="lazy">
-    {{else}}
-        <img  class="movie-modal-image" src="https://123moviesfree.zone/no-poster.png" alt="Нет фото"
-        loading="lazy">
+{{else}}
+<img class="movie-modal-image" src="https://www.deckchaircinema.com/template_1/img/default-movie-portrait.jpg"
+    alt="No foto" loading="lazy">
 {{/if}}
 <div class="movie-modal-full-description">
     <h2 class="movie-modal-title"> {{original_title}}</h2>
@@ -23,9 +23,13 @@
             <li>{{popularity}}</li>
             <li class="modal-original-title">{{original_title}}</li>
             <li class="modal-genre">
+                {{#if genres}}
                 {{#each genres}}
                 <span class="modal-genre-item">{{this.name}}</span>
                 {{/each}}
+                {{else}}
+                <span class="modal-genre-item">Indefinite</span>
+                {{/if}}
             </li>
         </ul>
     </div>
@@ -33,7 +37,7 @@
     <p class="about-modal-description">{{overview}}</p>
 
     <div class="buttons-wrapper movie-button">
-        <button class="button js-add-to-watched" disabled>add to Watched</button>
-        <button class="button modal-light-btn js-add-to-queue" disabled>add to queue</button>
+        <button class="button js-add-to-watched">add to watched</button>
+        <button class="button modal-light-btn js-add-to-queue">add to queue</button>
     </div>
 </div>
