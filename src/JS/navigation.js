@@ -1,5 +1,5 @@
 import refs from './refs';
-import getMovieFromSaved from './localStorage/getSavedItems';
+import getSavedItems from './localStorage/getSavedItems';
 import { mainPageRender } from './render/mainPageRender';
 import setItemsPerPage from './transformData/setItemsPerPage';
 import createPagination from './pagination/createPagination';
@@ -18,6 +18,7 @@ function onHome(e) {
   e.preventDefault();
   hidenLibrary();
 
+  refs.moviesContainer.classList.remove('show-message');
   refs.moviesContainer.innerHTML = '';
 
   mainPageRender();
@@ -43,7 +44,7 @@ function onLibrary(e) {
     refs.queueBtn.classList.remove('noactive'); // робить кнопку активною
   }
 
-  const movies = getMovieFromSaved(key); // записує дані з Localstoradge у змінну
+  const movies = getSavedItems(key); // записує дані з Localstoradge у змінну
 
   if (movies.length === 0) {
     refs.moviesContainer.innerHTML = `<p class='info-message'>You don't have saved movies yet</p>`;
