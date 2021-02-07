@@ -55,10 +55,12 @@ authFire.onAuthStateChanged(_user => {
     document.getElementById('btnLogOut').classList.remove('hide');
     document.querySelector('.signUp').classList.add('hide');
     document.querySelector('.signIn').classList.add('hide');
+    myLibriaryBtn.classList.remove('hide');
   } else {
     document.getElementById('btnLogOut').classList.add('hide');
     document.querySelector('.signUp').classList.remove('hide');
     document.querySelector('.signIn').classList.remove('hide');
+    myLibriaryBtn.classList.add('hide');
   }
 });
 
