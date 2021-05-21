@@ -1,9 +1,9 @@
 import refs from './refs';
-import getMovies from './getMovies';
-import { searchResultsMarkup } from './render/searchResultsMarkup';
-import keyWordPagination from './pagination/keyWordPagination';
+import getMovies from '../js/getMovies';
+import { searchResultsMarkup } from '../js/render/searchResultsMarkup';
+import keyWordPagination from '../js/pagination/keyWordPagination';
 import { Spinner } from 'spin.js'; // плагін спінера
-import opts from './options/spinner'; // імпорт опцій спінера
+import opts from '../js/options/spinner'; // імпорт опцій спінера
 
 // слухач події на форму пошуку
 refs.form.addEventListener('submit', event => {

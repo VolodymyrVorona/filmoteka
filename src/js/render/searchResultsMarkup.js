@@ -1,5 +1,5 @@
 import film from '../../templates/trendMovieTemplate.hbs';
-import refs from '../refs';
+import refs from '../../JS/refs';
 import setItemsPerPage from '../transformData/setItemsPerPage';
 import changeGenre from '../transformData/changeGenre';
 import changeData from '../transformData/changeData';

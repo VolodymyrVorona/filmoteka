@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination'; // плагін пагінації
 import 'tui-pagination/dist/tui-pagination.min.css';
-import refs from '../refs';
+import refs from '../../JS/refs';
 import { Spinner } from 'spin.js'; // плагін спінера
 import opts from '../options/spinner'; // імпорт опцій спінера
 import setItemsPerPage from '../transformData/setItemsPerPage';

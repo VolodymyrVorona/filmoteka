@@ -1,4 +1,4 @@
-import refs from '../refs';
+import refs from '../../JS/refs';
 import members from '../../components/members.json';
 import teamMember from '../../templates/team-member.hbs';
 import { renderMarkup } from '../render/searchResultsMarkup';

@@ -1,11 +1,11 @@
 import refs from './refs';
-import getSavedItems from './localStorage/getSavedItems';
-import { mainPageRender } from './render/mainPageRender';
-import setItemsPerPage from './transformData/setItemsPerPage';
-import createPagination from './pagination/createPagination';
+import getSavedItems from '../js/localStorage/getSavedItems';
+import { mainPageRender } from '../js/render/mainPageRender';
+import setItemsPerPage from '../js/transformData/setItemsPerPage';
+import createPagination from '../js/pagination/createPagination';
 import 'tui-pagination/dist/tui-pagination.min.css';
-import onPagination from './pagination/mainPagePagination';
-import libraryPageRender from './render/libraryPageRender';
+import onPagination from '../js/pagination/mainPagePagination';
+import libraryPageRender from '../js/render/libraryPageRender';
 
 refs.homeLink.addEventListener('click', onHome);
 refs.logo.addEventListener('click', onHome);

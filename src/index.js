@@ -1,6 +1,6 @@
 import './scss/main.scss';
-import './js/navigation';
-import './js/searchByKeywords';
+import './JS/navigation';
+import './JS/searchByKeywords';
 import './js/modal/movieDetails';
 
 import './js/firebase/firebase';

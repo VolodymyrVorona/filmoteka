@@ -1,4 +1,4 @@
-import refs from '../refs';
+import refs from '../../JS/refs.js';
 
 const signInbtn = document.querySelector('.signIn');
 const signUpbtn = document.querySelector('.signUp');

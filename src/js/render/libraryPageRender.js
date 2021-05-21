@@ -1,5 +1,5 @@
 import filmLibrary from '../../templates/libraryMovieTemplate.hbs';
-import refs from '../refs';
+import refs from '../../JS/refs';
 import changeGenre from '../transformData/changeGenre';
 import changeData from '../transformData/changeData';
 import { renderMarkup } from './searchResultsMarkup';

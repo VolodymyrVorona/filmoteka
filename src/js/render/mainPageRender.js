@@ -1,5 +1,5 @@
 import film from '../../templates/trendMovieTemplate.hbs';
-import refs from '../refs';
+import refs from '../../JS/refs';
 import { Spinner } from 'spin.js'; // плагін спінера
 import opts from '../options/spinner'; // імпорт опцій спінера
 import getMovies from '../getMovies';

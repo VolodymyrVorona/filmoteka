@@ -1,4 +1,4 @@
-import refs from '../refs';
+import refs from '../../JS/refs';
 import modalMovieTemplate from '../../templates/fullDescriptionMovie.hbs';
 import getSavedItems from '../localStorage/getSavedItems';
 import { saveItem, isInSaved } from '../localStorage/saveItem';

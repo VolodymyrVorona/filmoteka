@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination'; // плагін пагінації
 import 'tui-pagination/dist/tui-pagination.min.css';
-import refs from '../refs';
+import refs from '../../JS/refs';
 
 function createPagination(totalResults, elementsOnPage, visiblePages, cb) {
   const options = {
